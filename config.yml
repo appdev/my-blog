@@ -1,4 +1,4 @@
-baseURL: "http://app.run.ci/"
+baseURL: "http://blog.run.ci/"
 title: YingYue's Blog
 paginate: 5
 theme: PaperMod
@@ -44,12 +44,12 @@ outputs:
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-    author: Theme PaperMod
+    author: YingYue
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: auto
     # disableThemeToggle: true
-    ShowShareButtons: true
+    ShowShareButtons: false
     ShowReadingTime: true
     # disableSpecial1stPost: true
     displayFullLangName: true
