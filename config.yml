@@ -58,6 +58,7 @@ params:
     ShowCodeCopyButtons: true
     ShowToc: true
     comments: true
+    disqusShortname: blog-put-run
     images: ["papermod-cover.png"]
 
     profileMode:
