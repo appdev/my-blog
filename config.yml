@@ -24,14 +24,14 @@ languages:
                 - name: 文章
                   url: archives
                   weight: 5
-                - name: 归档
+                - name: 分类
                   url: categories/
-                  weight: 10
-                - name: 搜索
-                  url: search/
                   weight: 10
                 - name: Tags
                   url: tags/
+                  weight: 10
+                - name: 搜索
+                  url: search/
                   weight: 10
                 
 
@@ -92,7 +92,7 @@ params:
           url: "index.xml"
 
     editPost:
-        URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+        URL: "https://github.com/appdev/my-blog/tree/main/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
