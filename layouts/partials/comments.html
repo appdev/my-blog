@@ -1,19 +1,20 @@
-<div id="disqus_thread"></div>
+<script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+<div id="waline"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://blog-put-run.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+    Waline({
+        el: '#waline',
+        visitor: true, // 阅读量统计
+        login: 'enable',
+        placeholder: '仅填写昵称即可发表回复。\n' +
+            '填写邮箱可收到回复提醒。\n' +
+            '评论区支持 Markdown 语法及预览。',
+        copyright: true, // Waline 版权信息
+        dark: "body.dark", // 适配暗黑模式
+        highlight: true, // 代码高亮
+        requiredMeta: ['nick'],
+        uploadImage: false,
+        avatar: "monsterid",
+        wordLimit: 0, // 评论字数限制，0 为无限制
+        serverURL: 'https://blog-comments-mauve.vercel.app',
+    });
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

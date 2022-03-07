@@ -1,4 +1,4 @@
-baseURL: "http://blog.run.ci/"
+baseURL: "/"
 title: LengYue's Blog
 paginate: 5
 theme: PaperMod
@@ -21,7 +21,7 @@ languages:
         weight: 1
         menu:
             main:
-                - name: 文章
+                - name: ⏱时间轴
                   url: archives
                   weight: 5
                 - name: 分类
@@ -43,7 +43,7 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+    description: "琥珀之月,空谷之兰,皆是孤芳,既是孤芳,但求自赏便罢!"
     author: LengYue
     # author: ["Me", "You"] # multiple authors
 
@@ -59,7 +59,7 @@ params:
     ShowToc: true
     TocOpen: true
     comments: true
-    disqusShortname: blog-put-run
+#    disqusShortname: blog-put-run
     images: ["papermod-cover.png"]
 
     profileMode:
@@ -82,9 +82,11 @@ params:
             
             - I will share my study 🙇🏻 and life 🏃🏻‍♂️ notes here
             
-            - 我是一位全(quan)栈(gan)工程师，热爱开源，热爱编程，热爱生活。"
+            -
+            
+            - 我是一位全(quan)栈(gan)工程师，热爱开源，热爱编程，热爱生活。
 
-            - 
+            - 如果需要合作，[请联系我 💌](mailto:mail@put.run)
 
     socialIcons:
         - name: github
