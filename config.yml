@@ -1,5 +1,5 @@
 baseURL: "http://blog.run.ci/"
-title: YingYue's Blog
+title: LengYue's Blog
 paginate: 5
 theme: PaperMod
 
@@ -26,13 +26,14 @@ languages:
                   weight: 5
                 - name: 分类
                   url: categories/
-                  weight: 10
-                - name: Tags
+                  weight: 6
+                - name: 标签
                   url: tags/
-                  weight: 10
+                  weight: 9
                 - name: 搜索
                   url: search/
                   weight: 10
+
 
 outputs:
     home:
@@ -43,7 +44,7 @@ outputs:
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-    author: YingYue
+    author: LengYue
     # author: ["Me", "You"] # multiple authors
 
     defaultTheme: auto
@@ -75,19 +76,22 @@ params:
               url: tags
 
     homeInfoParams:
-        Title: "YingYue's Blog"
+        Title: "Hi there 👋"
         Content: >
-            Welcome to demo of hugo's theme PaperMod.
+            Welcome to my blog ✨ 
+            
+            - I will share my study 🙇🏻 and life 🏃🏻‍♂️ notes here
+            
+            - 我是一位全(quan)栈(gan)工程师，热爱开源，热爱编程，热爱生活。"
 
-            - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
-
-            - Do give a 🌟 on Github !
-
-            - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
+            - 
 
     socialIcons:
         - name: github
           url: "https://github.com/appdev"
+
+#        - name: email
+#          url: "mailto:mail@run.ci"
         - name: RsS
           url: "index.xml"
 
