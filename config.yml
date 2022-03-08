@@ -1,4 +1,4 @@
-baseURL: "/"
+baseURL: "https://blog.run.ci"
 title: LengYue's Blog
 paginate: 5
 theme: PaperMod
