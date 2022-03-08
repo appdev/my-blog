@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 description: "-这篇文章涉及服务器配置、docker技术，当然都是很初级的使用相信很多人跟我一样，不喜欢使用第三方软件来同步Obsidian"
 cover: 
-    image: "![16_3XOCgy](https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_08/16_3XOCgy.gif)"
+    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_08/16_3XOCgy.gif"
     # alt: "alt text" # image alt text
     caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
