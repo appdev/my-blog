@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在使用bindService时遇到这个问题，反复对比网上的别人的代码，没有任何问题，直接把网上的代码复制到我的项目里也没有人任何问题，但是"
+descriptionDelete: "在使用bindService时遇到这个问题，反复对比网上的别人的代码，没有任何问题，直接把网上的代码复制到我的项目里也没有人任何问题，但是"
 
 ---
                 

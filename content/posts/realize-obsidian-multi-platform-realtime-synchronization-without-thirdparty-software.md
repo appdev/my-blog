@@ -7,7 +7,7 @@ tags: [软件开发]
 showToc: true
 TocOpen: true
 draft: false
-description: "-这篇文章涉及服务器配置、docker技术，当然都是很初级的使用相信很多人跟我一样，不喜欢使用第三方软件来同步Obsidian"
+descriptionDelete: "-这篇文章涉及服务器配置、docker技术，当然都是很初级的使用相信很多人跟我一样，不喜欢使用第三方软件来同步Obsidian"
 cover: 
     image: "https://user-images.githubusercontent.com/45774780/137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif"
     # alt: "alt text" # image alt text

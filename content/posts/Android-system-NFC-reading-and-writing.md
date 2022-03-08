@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在AndroidNFC应用中，Android手机通常是作为通信中的发起者，也就是作为各种NFC卡的读写器。Android对NFC的支持主"
 
 ---
                 

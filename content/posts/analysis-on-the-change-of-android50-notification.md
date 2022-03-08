@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "目前在Android中通知的使用还是很常见的，为了做版本兼容，常用兼容包NotificationCompat.Builder和Notifi"
+
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png"
     # alt: "alt text" # image alt text

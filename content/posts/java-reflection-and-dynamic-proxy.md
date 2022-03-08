@@ -7,7 +7,7 @@ tags: [软件开发,Java]
 showToc: true
 TocOpen: true
 draft: false
-description: "基本用法Java反射API的第一个主要作用是获取程序在运行时刻的内部结构。这对于程序的检查工具和调试器来说，是非常实用的功能。只"
+descriptionDelete: "基本用法Java反射API的第一个主要作用是获取程序在运行时刻的内部结构。这对于程序的检查工具和调试器来说，是非常实用的功能。只"
 
 ---
                 

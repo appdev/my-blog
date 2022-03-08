@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "定义​内存泄漏也称作“存储渗漏”，用动态存储分配函数动态开辟的空间，在使用完毕后未释放，结果导致一直占据该内存单元。直到程序结束。"
+descriptionDelete: "定义​内存泄漏也称作“存储渗漏”，用动态存储分配函数动态开辟的空间，在使用完毕后未释放，结果导致一直占据该内存单元。直到程序结束。"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268248159ddf103ea1b684d296427e770344c.jpg"
     # alt: "alt text" # image alt text

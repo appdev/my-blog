@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "AndroidP跳过Gapps开机引导Android手机在刷了Gapps之后，在开机进入系统时会进入Gapps的开机引导（也就是"
 
 ---
                 

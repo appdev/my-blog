@@ -7,7 +7,7 @@ tags: [岁月如歌]
 showToc: true
 TocOpen: true
 draft: false
-description: "&emsp;&emsp;当年的曹操，持倚天青釭，临碣石，观沧海，叹杜康；奉天子以令不臣，征伐逆贼，稳定时局，又兴建设，搞生产，福泽一方，鬓角"
+descriptionDelete: "&emsp;&emsp;当年的曹操，持倚天青釭，临碣石，观沧海，叹杜康；奉天子以令不臣，征伐逆贼，稳定时局，又兴建设，搞生产，福泽一方，鬓角"
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "首先必须明确：RelativeLayout性能可未必比LinearLayout高LinearLayout性能也未必比RelativeLa"
+descriptionDelete: "首先必须明确：RelativeLayout性能可未必比LinearLayout高LinearLayout性能也未必比RelativeLa"
 
 ---
                 

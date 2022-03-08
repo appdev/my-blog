@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Gihub地址：https://github.com/huclengyue/StateLayoutWithKotlin这个项目是根据St"
+descriptionDelete: "Gihub地址：https://github.com/huclengyue/StateLayoutWithKotlin这个项目是根据St"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif"
     # alt: "alt text" # image alt text

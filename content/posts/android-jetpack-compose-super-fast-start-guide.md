@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Compose介绍JetpackCompose发布也快有一年的时间了，虽然目前仍是DEV阶段，但是距离可用已经不远了。Comp"
 
 ---
                 

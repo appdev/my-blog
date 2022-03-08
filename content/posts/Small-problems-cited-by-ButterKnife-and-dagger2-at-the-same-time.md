@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "同时使用parceler、butterknife和dagger2这几个库时，可能是因为都用到了annotation，gradle报错：Er"
+descriptionDelete: "同时使用parceler、butterknife和dagger2这几个库时，可能是因为都用到了annotation，gradle报错：Er"
 
 ---
                 

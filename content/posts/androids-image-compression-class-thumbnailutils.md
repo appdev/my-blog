@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "缩放图片目前一共有3中方式：第一种是BitmapFactory和BitmapFactory.Options。第二种是使用Bitmap加M"
+descriptionDelete: "缩放图片目前一共有3中方式：第一种是BitmapFactory和BitmapFactory.Options。第二种是使用Bitmap加M"
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "假设有这样一种场景：小明和小方都是程序员。其中小方会跳舞，当然它们都会编程。用面向对象的方法可以建模如下：因为小明和小方都会写编程，为"
+descriptionDelete: "假设有这样一种场景：小明和小方都是程序员。其中小方会跳舞，当然它们都会编程。用面向对象的方法可以建模如下：因为小明和小方都会写编程，为"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp"
     # alt: "alt text" # image alt text

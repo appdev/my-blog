@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Ihadthesameissuesincetheandroid6upgrading.Inoticedthatfor"
 
 ---
                 

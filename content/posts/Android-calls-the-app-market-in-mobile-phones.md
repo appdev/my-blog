@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "javapublicstaticvoidgoToMarket(Contextcontext,StringpackageName"
+
 
 ---
                 

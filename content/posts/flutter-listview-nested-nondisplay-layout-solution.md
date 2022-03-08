@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "在Flutter中如果使用listview嵌套listview(gridView)的方式（其实不是很推荐这么写）直接写会发现布局"
+descriptionDelete: "在Flutter中如果使用listview嵌套listview(gridView)的方式（其实不是很推荐这么写）直接写会发现布局"
 
 ---
                 

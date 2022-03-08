@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "下面我从几个例子作为切入点来讲解下Java里有哪些方法来实现线程间通信。如何让两个线程依次执行？那如何让两个线程按照"
+descriptionDelete: "下面我从几个例子作为切入点来讲解下Java里有哪些方法来实现线程间通信。如何让两个线程依次执行？那如何让两个线程按照"
 
 ---
                 

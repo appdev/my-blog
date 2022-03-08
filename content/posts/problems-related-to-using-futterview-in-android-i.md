@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "Flutter从Main开始启动,启动的时候需要最外层是MaterialAppvoidmain()=&gt;runApp(_widg"
+descriptionDelete: "Flutter从Main开始启动,启动的时候需要最外层是MaterialAppvoidmain()=&gt;runApp(_widg"
 
 ---
                 

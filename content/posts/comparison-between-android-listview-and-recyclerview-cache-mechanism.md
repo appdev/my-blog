@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "一，背景RecyclerView是谷歌官方出的一个用于大量数据展示的新控件，可以用来代替传统的ListView，更加强大和灵活。最近，自"
+descriptionDelete: "一，背景RecyclerView是谷歌官方出的一个用于大量数据展示的新控件，可以用来代替传统的ListView，更加强大和灵活。最近，自"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726827962b3735a3644d67283acc73d5a83869.png"
     # alt: "alt text" # image alt text

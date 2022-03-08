@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: ">一、管理Fragment在你的Activity你需要使用一个名为FragmentManager的类，通过调用getFragmentMa"
+
 
 ---
                 

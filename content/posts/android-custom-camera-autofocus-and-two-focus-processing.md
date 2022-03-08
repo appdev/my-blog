@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "由于android碎片化严重，而且各大厂商极有可能去修改相关API的实现，其中遇到了不少坑，包括实时相机高斯模糊，自动对焦的兼容问题，以及一"
+
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726827543QQ20180706-114646.png"
     # alt: "alt text" # image alt text

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "一、前言Android7.0强制启用了被称作StrictMode的策略，带来的影响就是你的App对外无法暴露file://类型的U"
+
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672684257450bae334866f45b8d908fd77f1d50.png"
     # alt: "alt text" # image alt text

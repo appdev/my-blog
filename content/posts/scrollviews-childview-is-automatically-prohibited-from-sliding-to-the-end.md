@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "问题描述:一个ScrollView中包含了好几个childView，有一个childview很大，一个屏幕显示不完，每个childview都"
+descriptionDelete: "问题描述:一个ScrollView中包含了好几个childView，有一个childview很大，一个屏幕显示不完，每个childview都"
 
 ---
                 

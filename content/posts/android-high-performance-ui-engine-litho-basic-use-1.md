@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "MountSpecsMountSpecs用来生成渲染具体View或者Drawable的组件。Mountspec必须使用@M"
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "转眼之间就该适配Android11，记得距离上次写Android10适配指南才过去不久.行为变更：所有应用这些变化，影响所有的应"
+
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268551223689144764.jpg"
     # alt: "alt text" # image alt text

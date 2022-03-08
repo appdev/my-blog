@@ -7,7 +7,7 @@ tags: [软件开发]
 showToc: true
 TocOpen: true
 draft: false
-description: "IDEA是2018-01版本，Golang是go-1.12.1，IDEA在Plugins中安裝的Go插件，我在运行go程序時是正常的，但是提"
+descriptionDelete: "IDEA是2018-01版本，Golang是go-1.12.1，IDEA在Plugins中安裝的Go插件，我在运行go程序時是正常的，但是提"
 
 ---
                 

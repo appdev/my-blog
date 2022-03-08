@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "今天和大家分享一个从Android系统源代码提取出来的汉字转成拼音实现方案，只要一个类，560多行代码就可以让你轻松实现汉字转成拼音的功能，"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726832678b03552d26ee83956018f08eeb3e5f.gif"
     # alt: "alt text" # image alt text

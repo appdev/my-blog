@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "这个是一个android的简单案例：界面的部分主要有三个按钮组成，这里将不再赘述他们之间的消息传递方法将会在代码中体现，其中对重要步骤进"
+descriptionDelete: "这个是一个android的简单案例：界面的部分主要有三个按钮组成，这里将不再赘述他们之间的消息传递方法将会在代码中体现，其中对重要步骤进"
 
 ---
                 

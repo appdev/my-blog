@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "TextView应该是Android开发中使用频次非常高的一个基础控件。对于长文本，TextView默认的处理方案是换行显示，对于只需要单行"
+descriptionDelete: "TextView应该是Android开发中使用频次非常高的一个基础控件。对于长文本，TextView默认的处理方案是换行显示，对于只需要单行"
 
 ---
                 

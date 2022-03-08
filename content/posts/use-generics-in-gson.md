@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "JSON字符串数组['Android','Java','PHP']当我们要通过Gson解析这个json时，一般有两种方式：使用数组，使用"
 
 ---
                 

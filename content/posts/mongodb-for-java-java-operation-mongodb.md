@@ -7,7 +7,7 @@ tags: [软件开发,Java]
 showToc: true
 TocOpen: true
 draft: false
-description: "一、准备工作1、首先，下载mongoDB对Java支持的驱动包驱动包下载地址：https://github.com/mongo"
+descriptionDelete: "一、准备工作1、首先，下载mongoDB对Java支持的驱动包驱动包下载地址：https://github.com/mongo"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726806345faeec63cacd297fc150c977c9193b.jpg"
     # alt: "alt text" # image alt text

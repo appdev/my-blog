@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "简单说一下原理，当RecycleView处于停滞状态的时候,通过findFirstVisibleItemPosition()findLas"
 
 ---
                 

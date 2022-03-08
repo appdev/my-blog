@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "库功能[dio][1]网络框架[shared_preferences][2]本地数据缓存[fluttertoast]"
+descriptionDelete: "库功能[dio][1]网络框架[shared_preferences][2]本地数据缓存[fluttertoast]"
 
 ---
                 

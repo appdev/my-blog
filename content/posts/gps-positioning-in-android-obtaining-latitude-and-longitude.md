@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "AndroidGPS定位问题,众所周知是一个蛮麻烦的问题.当初我是新手,现在我也是新手,也搞了我头大,网上搜索了很多的例子,一直处于僵持阶段"
+descriptionDelete: "AndroidGPS定位问题,众所周知是一个蛮麻烦的问题.当初我是新手,现在我也是新手,也搞了我头大,网上搜索了很多的例子,一直处于僵持阶段"
 
 ---
                 

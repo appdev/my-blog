@@ -7,7 +7,7 @@ tags: [岁月如歌]
 showToc: true
 TocOpen: true
 draft: false
-description: "&emsp;&emsp;读书是一件很安静的事情。要是论教养，你真的是读书人，你不要讲出来。读书也好，画画也好，不能弄成一种身份。&emsp"
+descriptionDelete: "&emsp;&emsp;读书是一件很安静的事情。要是论教养，你真的是读书人，你不要讲出来。读书也好，画画也好，不能弄成一种身份。&emsp"
 
 ---
                 

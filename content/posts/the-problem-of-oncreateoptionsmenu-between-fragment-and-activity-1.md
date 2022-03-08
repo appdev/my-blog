@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Fragment和Activity一样，可以重写onCreateOptionsMenu方法来设定自己的菜单，其实这两个地方使用onCreat"
 
 ---
                 

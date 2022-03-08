@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "如果使用最新版AndroidStudio创建基于API28的项目，就会发现，原来的android.support.全部变成了andro"
 
 ---
                 

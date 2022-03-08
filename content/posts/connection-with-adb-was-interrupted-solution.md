@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "java[2012-10-1610:49:35–MyFirstApp][2012-10-1610:49:35–MyFir"
+descriptionDelete: "java[2012-10-1610:49:35–MyFirstApp][2012-10-1610:49:35–MyFir"
 
 ---
                 

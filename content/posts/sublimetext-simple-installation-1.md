@@ -7,7 +7,7 @@ tags: [Linux]
 showToc: true
 TocOpen: true
 draft: false
-description: "小巧、高效、强大到逆天的编辑器，相比之下gedit，notepad++简直弱爆了。但是它不支持中文输入，之前介绍了如何让他支持中文输入，但是"
+descriptionDelete: "小巧、高效、强大到逆天的编辑器，相比之下gedit，notepad++简直弱爆了。但是它不支持中文输入，之前介绍了如何让他支持中文输入，但是"
 
 ---
                 

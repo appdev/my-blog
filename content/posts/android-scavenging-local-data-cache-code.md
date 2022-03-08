@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "/文件名:DataCleanManager.java描述:主要功能有清除内/外缓存，清除数据库，清除shared"
 
 ---
                 

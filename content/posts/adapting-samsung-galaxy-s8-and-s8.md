@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "高达84%的屏幕占比为GalaxyS8及S8+在游戏娱乐、观看视频时带来深度沉浸式视觉体验。但是与此同时S8却有着一个奇葩的屏幕比例：18"
+
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg"
     # alt: "alt text" # image alt text

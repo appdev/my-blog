@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "TheAndroidManifest.xmlFile&lt;activityandroid:windowSoftInputMode="
+descriptionDelete: "TheAndroidManifest.xmlFile&lt;activityandroid:windowSoftInputMode="
 
 ---
                 

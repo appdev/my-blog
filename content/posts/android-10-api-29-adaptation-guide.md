@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Android11[API30]已经发布正式版，来看看全新的[android11[api30]适配指南][1]非SDK接口"
+
 
 ---
                 

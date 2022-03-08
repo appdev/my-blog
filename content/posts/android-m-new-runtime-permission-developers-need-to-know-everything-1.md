@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "译文来自http://inthecheesefactory.com/blog/things-you-need-to-know-about-"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg"
     # alt: "alt text" # image alt text

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "这个tips由AndroidDevelopers分享自Google+的，我觉得这个tip对于UI体验确实很有用，所以我自己也写了一个de"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif"
     # alt: "alt text" # image alt text

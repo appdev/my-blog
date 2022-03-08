@@ -7,7 +7,6 @@ tags: [软件开发]
 showToc: true
 TocOpen: true
 draft: false
-description: "记录一下在Vue学习使用时候的遇到的问题在watch侦听器中，想要调用methods中的方法applicationId:(val)"
 
 ---
                 

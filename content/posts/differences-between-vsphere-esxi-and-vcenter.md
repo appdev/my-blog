@@ -7,7 +7,7 @@ tags: [Linux]
 showToc: true
 TocOpen: true
 draft: false
-description: "update:2020年03月26日经理了一番折腾之后，最终公司、家里都安装上PVE了，没错就是PVE。虽然最开始特别想使用ESXI。首先"
+descriptionDelete: "update:2020年03月26日经理了一番折腾之后，最终公司、家里都安装上PVE了，没错就是PVE。虽然最开始特别想使用ESXI。首先"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: ">原文链接:CompositionoverInheritance，WhatitmeansforyourActivities"
 
 ---
                 

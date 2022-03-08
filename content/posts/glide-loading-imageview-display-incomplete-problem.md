@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "简单记录下，用了一个圆角处理，圆角里面了是centerCrop，设置ImageView控件的fitxy属性，也还是几率性的显示不全！代码是这"
+descriptionDelete: "简单记录下，用了一个圆角处理，圆角里面了是centerCrop，设置ImageView控件的fitxy属性，也还是几率性的显示不全！代码是这"
 
 ---
                 

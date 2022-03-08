@@ -7,7 +7,7 @@ tags: [Java,Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在工作中，经常客服端需要和服务端进行通信，目前很多项目都采用JSON的方式进行数据传输，简单的参数可以通过手动拼接JSON字符串，但如果请求"
+descriptionDelete: "在工作中，经常客服端需要和服务端进行通信，目前很多项目都采用JSON的方式进行数据传输，简单的参数可以通过手动拼接JSON字符串，但如果请求"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "java调用拨号程序//给移动客服10086拨打电话Uriuri=Uri.parse('tel:10086');Inte"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "xmlandroid:layoutwidth=“wrapcontent”android:layoutheight=“wrapcontent"
 
 ---
                 

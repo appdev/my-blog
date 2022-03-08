@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "1.是用场景&emsp;&emsp;当一个应用上线发布首，突然发现了一个bug需要进行修复，如果真个bug不是严重，或者可以通过服"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268210240a01f6a2c2c5b237a032db35b7084.png"
     # alt: "alt text" # image alt text

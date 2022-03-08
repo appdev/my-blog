@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "滑动有粘性滑动有粘性，需要在拉一次才能生效，解决办法:mRecylerview.addOnScrollListener(newRe"
+descriptionDelete: "滑动有粘性滑动有粘性，需要在拉一次才能生效，解决办法:mRecylerview.addOnScrollListener(newRe"
 
 ---
                 

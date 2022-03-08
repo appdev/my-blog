@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "可能大家都知道我们保存相册到Android手机的时候，然后去打开系统图库找不到我们想要的那张图片，那是因为我们插入的图片还没有更新的缘故,先"
+descriptionDelete: "可能大家都知道我们保存相册到Android手机的时候，然后去打开系统图库找不到我们想要的那张图片，那是因为我们插入的图片还没有更新的缘故,先"
 
 ---
                 

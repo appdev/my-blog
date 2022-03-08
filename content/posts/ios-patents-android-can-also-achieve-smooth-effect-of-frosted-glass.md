@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "背景介绍上图就是我们在IOS设备上经常能够见到的毛玻璃(高斯模糊)效果。不得不说，这种效果在适合的场景下使用，能够获得绝佳的美感。但是鉴于"
+descriptionDelete: "背景介绍上图就是我们在IOS设备上经常能够见到的毛玻璃(高斯模糊)效果。不得不说，这种效果在适合的场景下使用，能够获得绝佳的美感。但是鉴于"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726843423e828301e9bb83ebb14e1396324167.png"
     # alt: "alt text" # image alt text

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Litho中包含的的两种数据类型Litho的两种属性分别是：不可变属性称为Props可变属性称为State不可变属性P"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268523973962129116.png"
     # alt: "alt text" # image alt text

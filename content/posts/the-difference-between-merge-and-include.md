@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "merge和include的区别是&lt;mergexmlns:android='http://schemas.android.com/"
 
 ---
                 

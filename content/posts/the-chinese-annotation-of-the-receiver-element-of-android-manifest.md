@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "语法（SYNTAX）：&lt;receiverandroid:enabled=['true'|'false']"
 
 ---
                 

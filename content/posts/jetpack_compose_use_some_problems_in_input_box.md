@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在JetpackCompose中使用输入框（TextField）遇到的一些问题为了更好的阅读体验，在阅读本文之前，你需要对"
+descriptionDelete: "在JetpackCompose中使用输入框（TextField）遇到的一些问题为了更好的阅读体验，在阅读本文之前，你需要对"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726860420webp"
     # alt: "alt text" # image alt text

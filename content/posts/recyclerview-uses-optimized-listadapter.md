@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "前言ListAdapter发布很久了，但是一直没有机会使用，这次终于因为性能问题对项目进行优化，再次做一下笔记，相比传统的Adapte"
+descriptionDelete: "前言ListAdapter发布很久了，但是一直没有机会使用，这次终于因为性能问题对项目进行优化，再次做一下笔记，相比传统的Adapte"
 
 ---
                 

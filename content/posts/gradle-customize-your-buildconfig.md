@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "BuildConfig.DEBUG首先在Gradle脚本中默认的debug和release两种模式BuildCondig.DEBU"
+descriptionDelete: "BuildConfig.DEBUG首先在Gradle脚本中默认的debug和release两种模式BuildCondig.DEBU"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [岁月如歌]
 showToc: true
 TocOpen: true
 draft: false
-description: "第三次重构blog再次保留了这篇文章不忘初心，方得始终。  在追逐梦想的道路上是孤独的。曾经我以为我有志同道合的朋友，我认为我是"
 
 ---
                 

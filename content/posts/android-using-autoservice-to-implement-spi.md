@@ -7,7 +7,7 @@ tags: [Android,Java]
 showToc: true
 TocOpen: true
 draft: false
-description: "什么是SPI?JavaSPI全称ServiceProviderInterface，是Java提供的一套用来被第三方实"
+descriptionDelete: "什么是SPI?JavaSPI全称ServiceProviderInterface，是Java提供的一套用来被第三方实"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp"
     # alt: "alt text" # image alt text

@@ -7,7 +7,7 @@ tags: [Linux]
 showToc: true
 TocOpen: true
 draft: false
-description: "之前一直是编译安装，装的多了就感觉麻烦，写个脚本还要上传。。。随意找了一下，发现软件源里有Python。记录一下配置好Python3.6"
+descriptionDelete: "之前一直是编译安装，装的多了就感觉麻烦，写个脚本还要上传。。。随意找了一下，发现软件源里有Python。记录一下配置好Python3.6"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "本文使用Matrix实现Android实现图片缩放与旋转。示例代码如下：packagecom.android.matrix;import"
 
 ---
                 

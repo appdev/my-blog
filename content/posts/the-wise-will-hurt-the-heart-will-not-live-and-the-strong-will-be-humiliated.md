@@ -7,7 +7,6 @@ tags: [岁月如歌]
 showToc: true
 TocOpen: true
 draft: false
-description: "&emsp;&emsp;慧极必伤，情深不寿，强极则辱，谦谦君子，温润如玉:&emsp;&emsp;这是金先生里,乾隆送陈家洛佩玉上的刻字。大"
 
 ---
                 

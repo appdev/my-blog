@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "介绍android上视频操作，主要有OpenGL、FFmpeg、以及4.1之后的MediaCodec,MediaCodec是Andr"
+descriptionDelete: "介绍android上视频操作，主要有OpenGL、FFmpeg、以及4.1之后的MediaCodec,MediaCodec是Andr"
 
 ---
                 

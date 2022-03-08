@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "初衷Litho作为一个高性能的UI引擎，学习曲线还是比较高的，但是在国内能用的资料非常少（大部分都是相互复制的”HelloWord"
 
 ---
                 

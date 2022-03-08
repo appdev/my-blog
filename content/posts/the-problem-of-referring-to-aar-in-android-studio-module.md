@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "引用aar的方法把aar文件放到libs目录下面，并且在对应的module项目下面build.gralde中添加如下配置:"
 
 ---
                 

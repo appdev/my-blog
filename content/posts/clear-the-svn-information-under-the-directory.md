@@ -7,7 +7,7 @@ tags: [软件开发]
 showToc: true
 TocOpen: true
 draft: false
-description: "在项目开发和日常文档管理时，用到了SVN，由于要把一些文档发给同事，这时想删除SVN版本信息文件，于是上网在SVN中文论坛找到了一份资料："
+descriptionDelete: "在项目开发和日常文档管理时，用到了SVN，由于要把一些文档发给同事，这时想删除SVN版本信息文件，于是上网在SVN中文论坛找到了一份资料："
 
 ---
                 

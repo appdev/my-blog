@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在最开始入门介绍中，我们曾经用SingleComponentSection完成了一个简单的列表，当时的做法是使用for构造出了多个子Co"
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "手机截图不是很流畅实际使用会流畅很多声音文件保存在/res/raw中，可以自己替换使用方法使用PopupWindow来弹出主题布局"
+descriptionDelete: "手机截图不是很流畅实际使用会流畅很多声音文件保存在/res/raw中，可以自己替换使用方法使用PopupWindow来弹出主题布局"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif"
     # alt: "alt text" # image alt text

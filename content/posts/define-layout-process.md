@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "⾃定义布局流程布局过程确定每个View的位置和尺⼨作⽤：为绘制和触摸范围做⽀持绘制：知道往哪⾥绘制触摸反馈：知道⽤户点"
+descriptionDelete: "⾃定义布局流程布局过程确定每个View的位置和尺⼨作⽤：为绘制和触摸范围做⽀持绘制：知道往哪⾥绘制触摸反馈：知道⽤户点"
 
 ---
                 

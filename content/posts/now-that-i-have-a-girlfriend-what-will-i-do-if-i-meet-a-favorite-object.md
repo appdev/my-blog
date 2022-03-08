@@ -7,7 +7,7 @@ tags: [岁月如歌]
 showToc: true
 TocOpen: true
 draft: false
-description: "&emsp;&emsp;在知乎上开到这个问题，我只能说提问题的人，你还搞不懂“喜欢一个人”和“对一个人有感情”之间的区别。我举两个不恰当的"
+descriptionDelete: "&emsp;&emsp;在知乎上开到这个问题，我只能说提问题的人，你还搞不懂“喜欢一个人”和“对一个人有感情”之间的区别。我举两个不恰当的"
 
 ---
                 

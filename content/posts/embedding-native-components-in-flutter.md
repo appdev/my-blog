@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "Flutter官方提供的控件AndroidView、UiKitView就是一种比较优雅的解决方案了。这里做了一个简单的嵌入TextView的"
+descriptionDelete: "Flutter官方提供的控件AndroidView、UiKitView就是一种比较优雅的解决方案了。这里做了一个简单的嵌入TextView的"
 
 ---
                 

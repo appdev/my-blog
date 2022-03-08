@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: ">本文介绍的是如何实现Android增量更新，而不是增量更新的深层次的原理什么是增量更新应用越做越大，可能只是一个小小的改动就需要重新"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png"
     # alt: "alt text" # image alt text

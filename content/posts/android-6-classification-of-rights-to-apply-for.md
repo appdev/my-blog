@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "6.0之前开发者申请各种权限，只需要在清单列表（AndroidManifest.xml）中进行声明就可以了。对开发者来说是相当便利，但对用户"
+
 
 ---
                 

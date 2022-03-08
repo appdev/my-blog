@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Thereisalwayssomeinformationthatisneededinmanyplacesinyour"
+descriptionDelete: "Thereisalwayssomeinformationthatisneededinmanyplacesinyour"
 
 ---
                 

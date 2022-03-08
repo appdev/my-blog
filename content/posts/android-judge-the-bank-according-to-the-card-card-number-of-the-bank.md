@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "根据银行卡号判断是哪个银行的卡，依据是银行卡号的前6位数，称之为bin号。我们把bin号转化为长整形，再把各个银行卡的bin号做成有序表。"
 
 ---
                 

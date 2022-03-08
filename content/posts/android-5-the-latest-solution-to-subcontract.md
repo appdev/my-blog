@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "建议参照最新官方提供的分包方式(科学上网)进行分包，具体配置方式在multiDexKeepProguard属性下第一步、新建文件a"
+
 
 ---
                 

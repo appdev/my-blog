@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "TextStyleconstTextStyle({this.inherit:true,//为f"
+descriptionDelete: "TextStyleconstTextStyle({this.inherit:true,//为f"
 
 ---
                 

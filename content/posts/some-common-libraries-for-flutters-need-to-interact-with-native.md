@@ -7,7 +7,7 @@ tags: [Android,Flutter]
 showToc: true
 TocOpen: true
 draft: false
-description: "Flutter的需要与原生交互的一些常用库【说明】由于这些库一直在更新，请自己选择合适的稳定版本下载。谷歌官方的针对Dart语言"
+descriptionDelete: "Flutter的需要与原生交互的一些常用库【说明】由于这些库一直在更新，请自己选择合适的稳定版本下载。谷歌官方的针对Dart语言"
 
 ---
                 

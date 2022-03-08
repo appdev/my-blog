@@ -7,7 +7,7 @@ tags: [软件开发,Java]
 showToc: true
 TocOpen: true
 draft: false
-description: "Timer的介绍：Timer是一种定时器工具，用来在一个后台线程计划执行指定任务。它可以计划执行一个任务一次或反复多次。TimerTask"
+descriptionDelete: "Timer的介绍：Timer是一种定时器工具，用来在一个后台线程计划执行指定任务。它可以计划执行一个任务一次或反复多次。TimerTask"
 
 ---
                 

@@ -7,7 +7,6 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "&emsp;&emsp;项目中发现，RecyclerView在5.0以上版本滑动不流畅,滑动的手指一离开屏幕，列表就不动了，没有惯性效果。调"
 
 ---
                 

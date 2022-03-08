@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "目前架构一共分为四层,从低到高依次是基础层,项目封装（如果不需要可能跳过这层）,业务层和宿主层。宿主层宿主层位于最上层,主要作用是"
+
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Litho底层使用的是Yoga,Yoga是Facebook的另一个开源项目，它是一个跨iOS、Android、Windows平台在内的布局引"
+descriptionDelete: "Litho底层使用的是Yoga,Yoga是Facebook的另一个开源项目，它是一个跨iOS、Android、Windows平台在内的布局引"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268538543844186644.png"
     # alt: "alt text" # image alt text

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "RecyclerView很多时候是展示静态的数据，并不会有删除的操作，讲到RecyclerView时，会提到它提供了一个很好的展现删除操作动"
+descriptionDelete: "RecyclerView很多时候是展示静态的数据，并不会有删除的操作，讲到RecyclerView时，会提到它提供了一个很好的展现删除操作动"
 
 ---
                 

@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "Kotlin在Android上令人惊叹的技巧原文链接:[KotlinawesometricksforAndro"
+descriptionDelete: "Kotlin在Android上令人惊叹的技巧原文链接:[KotlinawesometricksforAndro"
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg"
     # alt: "alt text" # image alt text

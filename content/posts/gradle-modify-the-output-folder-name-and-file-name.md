@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "这里分为Gradle3.0之前和之后两种方法。3.0之前在release下添加下面代码applicationVariants.all"
+descriptionDelete: "这里分为Gradle3.0之前和之后两种方法。3.0之前在release下添加下面代码applicationVariants.all"
 
 ---
                 

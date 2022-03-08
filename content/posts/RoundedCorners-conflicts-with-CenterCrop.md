@@ -7,7 +7,7 @@ tags: [Android]
 showToc: true
 TocOpen: true
 draft: false
-description: "在glide4.0上面centerCrop和圆角图片有冲突只能显示一个类似这个:Glide.with(TPApplication.get"
+descriptionDelete: "在glide4.0上面centerCrop和圆角图片有冲突只能显示一个类似这个:Glide.with(TPApplication.get"
 
 ---
                 
