@@ -15,7 +15,7 @@ cover:
     relative: false # when using page bundles set this to true
 ---
                 
-- ** 这篇文章涉及服务器配置、docker 技术，当然都是很初级的使用 **
+**这篇文章涉及服务器配置、docker 技术，当然都是很初级的使用**
 
 相信很多人跟我一样，不喜欢使用第三方软件来同步 Obsidian 。每次要打开两个软件，很麻烦。这种情况在手机上最为明显。
 

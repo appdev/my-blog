@@ -1,6 +1,6 @@
 baseURL: "https://blog.run.ci"
 title: LengYue's Blog
-paginate: 5
+paginate: 8
 theme: PaperMod
 
 enableInlineShortcodes: true
