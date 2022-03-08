@@ -11,7 +11,7 @@ description: "译文来自http://inthecheesefactory.com/blog/things-you-need-to-
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

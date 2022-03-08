@@ -11,7 +11,7 @@ description: "一、前言Android7.0强制启用了被称作StrictMode的策略�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672684257450bae334866f45b8d908fd77f1d50.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

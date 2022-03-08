@@ -11,7 +11,7 @@ description: "!!!原文出处：src='http://bugly.qq.com/bbs/forum.php?mod=viewt
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726823898b4a0ff24c87c463182c6ea2759cc0.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

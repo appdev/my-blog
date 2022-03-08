@@ -11,7 +11,7 @@ description: "目前在Android中通知的使用还是很常见的，为了做�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

@@ -11,7 +11,7 @@ description: "由于android碎片化严重，而且各大厂商极有可能去�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726827543QQ20180706-114646.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

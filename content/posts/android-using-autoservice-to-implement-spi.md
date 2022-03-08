@@ -11,7 +11,7 @@ description: "什么是SPI?JavaSPI全称ServiceProviderInterface，是Java提供
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

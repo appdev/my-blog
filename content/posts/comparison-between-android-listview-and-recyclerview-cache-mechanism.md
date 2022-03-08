@@ -11,7 +11,7 @@ description: "一，背景RecyclerView是谷歌官方出的一个用于大量数
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726827962b3735a3644d67283acc73d5a83869.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

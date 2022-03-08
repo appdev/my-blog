@@ -11,7 +11,7 @@ description: "手机截图不是很流畅实际使用会流畅很多声音文件
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

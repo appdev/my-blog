@@ -11,7 +11,7 @@ description: "转眼之间就该适配Android11，记得距离上次写Android10
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268551223689144764.jpg"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

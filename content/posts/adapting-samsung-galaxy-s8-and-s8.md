@@ -11,7 +11,7 @@ description: "高达84%的屏幕占比为GalaxyS8及S8+在游戏娱乐、观看�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

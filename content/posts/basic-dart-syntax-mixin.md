@@ -11,7 +11,7 @@ description: "假设有这样一种场景：小明和小方都是程序员。其
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

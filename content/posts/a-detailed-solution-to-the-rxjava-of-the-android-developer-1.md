@@ -11,7 +11,7 @@ description: "前言我从去年开始使用RxJava，到现在一年多了。今
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726815222c0fc5fdad65792a487ea475abf2ff.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

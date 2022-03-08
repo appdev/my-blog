@@ -11,7 +11,7 @@ description: "Kotlin在Android上令人惊叹的技巧原文链接:[Kotlinawesom
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

@@ -11,7 +11,7 @@ description: "这个tips由AndroidDevelopers分享自Google+的，我觉得这�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

@@ -11,7 +11,7 @@ description: ">本文介绍的是如何实现Android增量更新，而不是增�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

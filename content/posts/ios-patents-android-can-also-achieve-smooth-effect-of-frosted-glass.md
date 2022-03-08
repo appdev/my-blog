@@ -11,7 +11,7 @@ description: "背景介绍上图就是我们在IOS设备上经常能够见到的
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726843423e828301e9bb83ebb14e1396324167.png"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

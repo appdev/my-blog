@@ -11,7 +11,7 @@ description: "-这篇文章涉及服务器配置、docker技术，当然都是�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_08/16_3XOCgy.gif"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

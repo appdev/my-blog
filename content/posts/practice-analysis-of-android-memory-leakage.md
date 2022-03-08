@@ -11,7 +11,7 @@ description: "定义​内存泄漏也称作“存储渗漏”，用动态存储
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268248159ddf103ea1b684d296427e770344c.jpg"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

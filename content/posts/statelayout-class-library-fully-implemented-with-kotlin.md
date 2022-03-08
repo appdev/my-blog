@@ -11,7 +11,7 @@ description: "Gihub地址：https://github.com/huclengyue/StateLayoutWithKotlin�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 

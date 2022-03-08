@@ -11,7 +11,7 @@ description: "今天和大家分享一个从Android系统源代码提取出来�
 cover: 
     image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726832678b03552d26ee83956018f08eeb3e5f.gif"
     # alt: "alt text" # image alt text
-    caption: "display caption under cover" # display caption under cover
+    # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 
