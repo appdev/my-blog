@@ -9,6 +9,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
+uglyurls: true
 # googleAnalytics: UA-123-45
 defaultContentLanguage : zh
 minify:
@@ -22,16 +23,16 @@ languages:
         menu:
             main:
                 - name: ⏱时间轴
-                  url: archives
+                  url: archives.html
                   weight: 5
                 - name: 分类
-                  url: categories/
+                  url: categories.html
                   weight: 6
                 - name: 标签
-                  url: tags/
+                  url: tags.html
                   weight: 9
                 - name: 搜索
-                  url: search/
+                  url: search.html
                   weight: 10
 
 
