@@ -108,4 +108,4 @@ textView.setText(text)
 
 
   [1]: https://developer.android.com/reference/android/text/StaticLayout
-  [2]: https://static.apkdv.com/qiniu_image//blog/image/QQ20180922-180934@2x.png#mirages-width=400&mirages-height=158&mirages-cdn-type=1
+  [2]: https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804609479QQ20180922-180934@2x.png

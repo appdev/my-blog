@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "-这篇文章涉及服务器配置、docker技术，当然都是很初级的使用相信很多人跟我一样，不喜欢使用第三方软件来同步Obsidian"
 cover: 
-    image: "https://user-images.githubusercontent.com/45774780/137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif"
+    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804614348137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -23,7 +23,7 @@ cover:
 
 直到最近在翻看 Obsidian 的插件的时候接触到了这个插件 `Self-hosted LiveSync`（虽然也有一款支持 WebDav 的插件，但是试了一下连不上服务器，作者说目前 WebDav 还在测试中）这个插件真的非常的棒 👍🏻。实现了无感同步，甚至可以多平台实时同步。
 引用一张作者的图：
-![](https://user-images.githubusercontent.com/45774780/137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif)
+![](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804614348137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif)
 
 ### 搭建服务器端
 

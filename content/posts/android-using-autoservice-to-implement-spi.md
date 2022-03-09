@@ -61,10 +61,9 @@ Java SPI 全称 Service Provider Interface，是 Java 提供的一套用来被�
       }
   }
   
-  复制代码
   ```
 * 在 `resources` 目录下建立 `/META-INF/services` 目录,并建立已 `com.apkdv.spi_test.Book` 为命名的文件，然后把 `Android` 和 `Ios` 全路径添加进去
-  ![image.png](https://user-gold-cdn.xitu.io/2020/3/25/17111d731ab34b9b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+  ![image.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/164680461042817111d731ab34b9b~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
 * 使用 `ServiceLoader` 类读取 `Book` 接口实现类
   
   ```
@@ -74,7 +73,7 @@ Java SPI 全称 Service Provider Interface，是 Java 提供的一套用来被�
           }
   ```
 * 结果
-  ![image.png](https://user-gold-cdn.xitu.io/2020/3/25/17111d731ab8e9d2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+  ![image.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/164680461087717111d731ab8e9d2~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
 
 ---
 

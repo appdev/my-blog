@@ -60,7 +60,7 @@ Thread
 >[Java引用介绍](http://blog.csdn.net/mazhimazh/article/details/19752475)    
 Java四种引用由高到低依次为：强引用  >  软引用  >  弱引用  >  虚引用
 表格说明
->![](https://static.apkdv.com/qiniu_image//image/1/92/a9369a283f0c17bb1be4ca07fc2c2.png#mirages-width=779&mirages-height=148&mirages-cdn-type=1)
+>![](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804612724a9369a283f0c17bb1be4ca07fc2c2.png)
 
 **复用ConvertView  **
 >[复用详解](http://blog.csdn.net/lmj623565791/article/details/24333277) 

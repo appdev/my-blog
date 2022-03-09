@@ -210,7 +210,7 @@ RxJava 有四个基本概念：`Observable` (可观察者，即被观察者)、 
 *   `onError()`: 事件队列异常。在事件处理过程中出异常时，`onError()` 会被触发，同时队列自动终止，不允许再有事件发出。
 *   在一个正确运行的事件序列中, `onCompleted()` 和 `onError()` 有且只有一个，并且是事件序列中的最后一个。需要注意的是，`onCompleted()` 和 `onError()` 二者也是互斥的，即在队列中调用了其中一个，就不应该再调用另一个。
 RxJava 的观察者模式大致如下图：
-![](https://static.apkdv.com/qiniu_image//image/8/9e/272fe2d630e6c3f8a309e4551f0de.png#mirages-width=599&mirages-height=170&mirages-cdn-type=1)
+![](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804611316272fe2d630e6c3f8a309e4551f0de.png)
 
 #### 2. 基本实现
 
@@ -333,7 +333,7 @@ public Subscription subscribe(Subscriber subscriber) {
 2.  调用 `Observable` 中的 `OnSubscribe.call(Subscriber)` 。在这里，事件发送的逻辑开始运行。从这也可以看出，在 RxJava 中，`Observable` 并不是在创建的时候就立即开始发送事件，而是在它被订阅的时候，即当 `subscribe()` 方法执行的时候。
 3.  将传入的 `Subscriber` 作为 `Subscription` 返回。这是为了方便 `unsubscribe()`.
 整个过程中对象间的关系如下图：
-![](https://static.apkdv.com/qiniu_image//image/c/5b/0d650202304887fbb74de90cf4fef.png#mirages-width=776&mirages-height=368&mirages-cdn-type=1)
+![](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/16468046117870d650202304887fbb74de90cf4fef.png)
 或者可以看动图：
 
 ![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268160027e858630ed6e0ea107d3bf606f72a.gif)
@@ -530,7 +530,7 @@ Observable.just("images/logo.png") // 输入类型 String
 可以看到，`map()` 方法将参数中的 `String` 对象转换成一个 `Bitmap` 对象后返回，而在经过 `map()` 方法后，事件的参数类型也由 `String`转为了 `Bitmap`。这种直接变换对象并返回的，是最常见的也最容易理解的变换。不过 RxJava 的变换远不止这样，它不仅可以针对事件对象，还可以针对整个事件队列，这使得 RxJava 变得非常灵活。我列举几个常用的变换：
 
 *   `map()`: 事件对象的直接变换，具体功能上面已经介绍过。它是 RxJava 最常用的变换。 `map()` 的示意图：
-![](https://static.apkdv.com/qiniu_image//image/6/bb/f6848fb7655e5e569e2e6fbc76197.png#mirages-width=644&mirages-height=514&mirages-cdn-type=1)
+![](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804612189f6848fb7655e5e569e2e6fbc76197.png)
 
         <li>`flatMap()`: 这是一个很有用但**非常难理解**的变换，因此我决定花多些篇幅来介绍它。 首先假设这么一种需求：假设有一个数据结构『学生』，现在需要打印出一组学生的名字。实现方式很简单：
 ```java
