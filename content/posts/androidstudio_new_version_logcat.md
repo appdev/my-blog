@@ -39,7 +39,7 @@ cover:
 
 第4个比较常用  
 
-![16_5WgMNi](https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_22/16_5WgMNi.png)
+![16_5WgMNi](https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_22/16_mjBqws.png)
 
 
 如图，有几个选项，Standard View 就是默认的展示包含了所有的信息，时间，包名，类名，进程ID等
