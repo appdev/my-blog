@@ -1,16 +1,14 @@
 ---
-title: "Flutter Error: Not found: ‘dart:html‘"
+title: "Flutter error not found dart html"
 slug: "flutter_error_not_found_dart_html"
-date: 2022-04-18 17:30:14
+date: 2022-04-20T13:44:55+08:00
 categories: [Flutter]
 tags: [Flutter]
 showToc: true
 TocOpen: true
 draft: false
-
-
+description: "Flutter error not found dart html"
 ---
-
 
 场景：同一个项目，打包成 Flutter web 和 Flutter App。
 问题：Error: Not found: ‘dart:html’。
@@ -65,6 +63,3 @@ HttpClientAdapter getHttpClientAdapter() {
 import 'http_client_adapter.dart' as adapter;
 httpClientAdapter = adapter.getHttpClientAdapter();
 ```
-
-
-
