@@ -87,15 +87,15 @@ docker run --rm -it -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -v /opt/c
 
 群辉这么配置：
 重启或者关闭 NAS 后自动启动
-![webp](https://static.apkdv.com/blog/blog/1646726865634webp)
+![webp](https://static.apkdv.com/blog/blog/1646726865634.webp)
 
 配置文件和数据库路径
-![webp](https://static.apkdv.com/blog/blog/1646726865939webp)
+![webp](https://static.apkdv.com/blog/blog/1646726865939.webp)
 用户名和密码
-![webp](https://static.apkdv.com/blog/blog/1646726866365webp)
+![webp](https://static.apkdv.com/blog/blog/1646726866365.webp)
 
 端口配置
-![webp](https://static.apkdv.com/blog/blog/1646726866767webp)
+![webp](https://static.apkdv.com/blog/blog/1646726866767.webp)
 
 访问以下网址，如果能打开则表示 CouchDB 已经启动：
 
@@ -105,7 +105,7 @@ http://你的 IP:你的端口
 
 > 显示的内容是一个 JSON 字符串。这是正常的：
 
-![webp](https://static.apkdv.com/blog/blog/1646726867185webp)
+![webp](https://static.apkdv.com/blog/blog/1646726867185.webp)
 
 群辉无需其他设置。云服务器用户再次执行（注意替换端口、账号密码）：
 
@@ -123,15 +123,15 @@ docker run -d --restart always  -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=passwo
 
 安装插件后，打开填写各项，URL 就是上面那个网址。database name 这里填写你的数据库名字。没有回自动创建，所以随便填就行。
 
-![webp](https://static.apkdv.com/blog/blog/1646726867519webp)
+![webp](https://static.apkdv.com/blog/blog/1646726867519.webp)
 
 端到端加密，如果你只需要同步文章，可以关闭。如果需要同步文章、插件、配置，那么必须打开
 
-![webp](https://static.apkdv.com/blog/blog/1646726867894webp)
+![webp](https://static.apkdv.com/blog/blog/1646726867894.webp)
 
 设置你的客户端和 Vault 的名字。我的理解是设置一个标示，跟其他 Vault 做区分。
 
-![webp](https://static.apkdv.com/blog/blog/1646726867519webp)
+![webp](https://static.apkdv.com/blog/blog/1646726867519.webp)
 
 这样配置完成之后，已经可以在桌面端相互同步了。
 
@@ -164,13 +164,13 @@ docker run -d --restart always  -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=passwo
 
 （emmm 应该都能看懂吧）
 
-![webp](https://static.apkdv.com/blog/blog/1646726868927webp)
+![webp](https://static.apkdv.com/blog/blog/1646726868927.webp)
 
 反向代理：
 
 目标 URL 后面，的端口地址改成你自己设置的就可以了。前面的 IP 地址不需要修改。
 
-![webp](https://static.apkdv.com/blog/blog/1646726869547webp)
+![webp](https://static.apkdv.com/blog/blog/1646726869547.webp)
 
 配置完成后访问：
 
@@ -183,16 +183,16 @@ https://域名:端口(如果有)  正常情况下应该会打开一个和上面�
 补充一下群辉 NAS 的配置：
 
 在安全里新增 域名证书。**这里的域名就是你 FRP DDNS 等用到的证书**
-![webp](https://static.apkdv.com/blog/blog/1646726870142webp)
+![webp](https://static.apkdv.com/blog/blog/1646726870142.webp)
 
 新增证书后一定要点击配置，将新增的证书应用到域名上。
 
 然后使用群辉内置的反向代理
 
-![webp](https://static.apkdv.com/blog/blog/1646726870474webp)
+![webp](https://static.apkdv.com/blog/blog/1646726870474.webp)
 
 通常这么设置，**域名填写你证书的额域名即可**
 
-![webp](https://static.apkdv.com/blog/blog/1646726870859webp)
+![webp](https://static.apkdv.com/blog/blog/1646726870859.webp)
 
 之后就可以正常使用了。
