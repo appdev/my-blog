@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -30,14 +30,14 @@ android的权限系统一直是首要的安全概念，因为这些权限只在�
 难怪一些坏蛋利用这个缺陷恶意收集用户数据用来做坏事了！
 android小组也知道这事儿。7年了！权限系统终于被重新设计了。  
 在android6.0棉花糖，app将不会在安装的时候授予权限。取而代之的是，app不得不在运行时一个一个询问用户授予权限。
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268100856c31e6e55060ddc98a75024ca6c53.jpg)
 
 注意权限询问对话框不会自己弹出来。开发者不得不自己调用。如果开发者要调用的一些函数需要某权限而用户又拒绝授权的话，函数将抛出异常直接导致程序崩溃。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268105575f080169f5f053da89464186a202d.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268105575f080169f5f053da89464186a202d.jpg)
 
 另外，用户也可以随时在设置里取消已经授权的权限。
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726811064f0b3b493254b20665a44c4213a609.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726811064f0b3b493254b20665a44c4213a609.jpg)
 
 你或许已经感觉到背后生出一阵寒意。。。  
 
@@ -52,16 +52,16 @@ android小组也知道这事儿。7年了！权限系统终于被重新设计了
 
 莫慌张，放轻松。android小队又不傻，肯定考虑到了这情况。如果app的targetSdkVersion 低于 23，那将被认为app没有用23新权限测试过，那将被继续使用旧有规则：用户在安装的时候不得不接受所有权限，安装后app就有了那些权限咯！
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268114732c4556ba77b94d570783810e66f30.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268114732c4556ba77b94d570783810e66f30.jpg)
 
 然后app像以前一样奔跑！注意，此时用户依然可以取消已经同意的授权！用户取消授权时，android 6.0系统会警告，但这不妨碍用户取消授权。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726811811dcf57ec4d2ae499057181a0062936.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726811811dcf57ec4d2ae499057181a0062936.jpg)
 问题又来了，这时候你的app崩溃吗？  
 
 善意的主把这事也告诉了android小组，当我们在targetSdkVersion 低于23的app调用一个需要权限的函数时，这个权限如果被用户取消授权了的话，不抛出异常。但是他将啥都不干，结果导致函数返回值是null或者0.
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726812801357a11b7857a6236db62bca03015e.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726812801357a11b7857a6236db62bca03015e.jpg)
 别高兴的太早。尽管app不会调用这个函数时崩溃，返回值null或者0可能接下来依然导致崩溃。
 好消息（至少目前看来）是这类取消权限的情况比较少，我相信很少用户这么搞。如果他们这么办了，后果自负咯。  
 
@@ -174,7 +174,7 @@ private void insertDummyContact() {
 下一步，不得不再写个方法检查有没有权限。如果没有弹个对话框询问用户授权。然后你才可以下一步创建联系人。
 权限被分组了，如下表：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726813246cfddb78ca7f3663995d738eeb151f.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726813246cfddb78ca7f3663995d738eeb151f.png)
 
 同一组的任何一个权限被授权了，其他权限也自动被授权。例如，一旦WRITE_CONTACTS被授权了，app也有READ_CONTACTS和GET_ACCOUNTS了。  
 
@@ -195,7 +195,7 @@ private void insertDummyContactWrapper() {
 ```
 如果已有权限，insertDummyContact()会执行。否则，requestPermissions被执行来弹出请求授权对话框，如下：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726813717712bcb6dc9e814a992989799ef83c.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726813717712bcb6dc9e814a992989799ef83c.jpg)
 
 
 不论用户同意还是拒绝，activity的onRequestPermissionsResult会被回调来通知结果（通过第三个参数），grantResults,如下：
@@ -225,7 +225,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 
 如果用户拒绝某授权。下一次弹框，用户会有一个“不再提醒”的选项的来防止app以后继续请求授权。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268141323c7e983cdc41d00cef754c4bb615e.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268141323c7e983cdc41d00cef754c4bb615e.jpg)
 
 如果这个选项在拒绝授权前被用户勾选了。下次为这个权限请求requestPermissions时，对话框就不弹出来了，结果就是，app啥都不干。
 这将是很差的用户体验，用户做了操作却得不到响应。这种情况需要好好处理一下。在请求requestPermissions前，我们需要检查是否需要展示请求权限的提示通过activity的shouldShowRequestPermissionRationale，代码如下：
@@ -265,7 +265,7 @@ private void showMessageOKCancel(String message, DialogInterface.OnClickListener
 当一个权限第一次被请求和用户标记过不再提醒的时候,我们写的对话框被展示。
 后一种情况，onRequestPermissionsResult 会收到PERMISSION_DENIED ，系统询问对话框不展示。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672681446147b35905ada497d8d9986e9e1ab69.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672681446147b35905ada497d8d9986e9e1ab69.jpg)
 
 ####一次请求多个权限
 
@@ -414,7 +414,7 @@ ActivityCompat.shouldShowRequestPermissionRationale()
 
 ####权限随时可以被撤销。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726811064f0b3b493254b20665a44c4213a609.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726811064f0b3b493254b20665a44c4213a609.jpg)
 当app开着的时候被撤消了会发生什么呢？我试过了发现这时app会突然终止 terminated。app中的一切都被简单粗暴的停止了，因为terminated！对我来说这可以理解，因为系统如果允许它继续运行（没有某权限），这会召唤弗雷迪到我的噩梦里。或许更糟…
 
 我相信你对新权限模型已经有了清晰的认识。我相信你也意识到了问题的严峻。  

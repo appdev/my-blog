@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "什么是SPI?JavaSPI全称ServiceProviderInterface，是Java提供的一套用来被第三方实"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -63,7 +63,7 @@ Java SPI 全称 Service Provider Interface，是 Java 提供的一套用来被�
   
   ```
 * 在 `resources` 目录下建立 `/META-INF/services` 目录,并建立已 `com.apkdv.spi_test.Book` 为命名的文件，然后把 `Android` 和 `Ios` 全路径添加进去
-  ![image.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/164680461042817111d731ab34b9b~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
+  ![image.png](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/164680461042817111d731ab34b9b~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
 * 使用 `ServiceLoader` 类读取 `Book` 接口实现类
   
   ```
@@ -73,7 +73,7 @@ Java SPI 全称 Service Provider Interface，是 Java 提供的一套用来被�
           }
   ```
 * 结果
-  ![image.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/164680461087717111d731ab8e9d2~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
+  ![image.png](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/164680461087717111d731ab8e9d2~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
 
 ---
 
@@ -136,7 +136,7 @@ private fun getBookList() {
 
 ### **结果**
 
-![image.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
+![image.png](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672685915117111d731ac3ddc9~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
 
 可以看到获取到了两个继承类，并且不是空！
 

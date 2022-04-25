@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "一、准备工作1、首先，下载mongoDB对Java支持的驱动包驱动包下载地址：https://github.com/mongo"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726806345faeec63cacd297fc150c977c9193b.jpg"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726806345faeec63cacd297fc150c977c9193b.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -26,7 +26,7 @@ mongoDB对Java的相关支持、技术：http://www.mongodb.org/display/DOCS/Jav
 <!--more-->
 2、 下面建立一个JavaProject工程，导入下载下来的驱动包。即可在Java中使用mongoDB，目录如下：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726806345faeec63cacd297fc150c977c9193b.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726806345faeec63cacd297fc150c977c9193b.jpg)
  
 
 

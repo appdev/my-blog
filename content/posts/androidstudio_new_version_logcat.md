@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 description: "Desc Text."
 cover:
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_22/16_mjBqws.png" 
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_22/16_mjBqws.png" 
     # image path/url
 #      alt: "alt text" # image alt text
 #     caption: "<text>" # 详情页图片下面的文字
@@ -20,7 +20,7 @@ cover:
 
 现在是这个样子了。
 
-![16_mjBqws](https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_22/16_mjBqws.png)
+![16_mjBqws](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_22/16_mjBqws.png)
 
 嗯，就是这样子，外观到是好看多了，不过对于使用习惯的我们还是需要适应下，过滤还是可以的，就是你要显示自己应用时候不想之前那样可以选择了
 
@@ -39,7 +39,7 @@ cover:
 
 第4个比较常用  
 
-![16_5WgMNi](https://gitee.com/huclengyue/my-gallery/raw/master/images/2022_03_22/16_mjBqws.png)
+![16_5WgMNi](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_22/16_mjBqws.png)
 
 
 如图，有几个选项，Standard View 就是默认的展示包含了所有的信息，时间，包名，类名，进程ID等

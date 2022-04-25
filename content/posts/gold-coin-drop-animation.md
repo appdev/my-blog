@@ -9,14 +9,14 @@ TocOpen: true
 draft: false
 descriptionDelete: "手机截图不是很流畅实际使用会流畅很多声音文件保存在/res/raw中，可以自己替换使用方法使用PopupWindow来弹出主题布局"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 
 手机截图不是很流畅实际使用会流畅很多
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268093899a4e68488147a361365d6fa77d916.gif)
 
 声音文件保存在/res/raw 中，可以自己替换
 

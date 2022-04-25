@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -27,14 +27,14 @@ cover:
 
 ## 演示：差分包的生成与合并
 如下图所示(再次为我的艺术细胞所震撼)： 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268262225147c03fcd52bd67c5bad0970062c.png)
 
 现在的问题在于如何生成差分包以及合并差分包。这里，我们借助开源库[bsdiff](http://www.daemonology.net/bsdiff/)来解决以上两个问题。首先我们先演示一下差分包的形成与合并。
 我们先打出一个安装包，假设为old.apk。对源码做修改后，再打出一个新的安装包new.apk。此处old.apk相当于老版本的应用，而new.apk相当于新版本的应用。接下来，我们利用bsdiff来生成差分包patch.patch。
 
 ## 生成差分包
 将上面的old.apk和new.apk放入bsdiff解压后的目录，然后在控制台中执行命令bsdiff old.apk new.apk patch.patch,稍等一会便可以生成差分包patch.patch，如下
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672682662259222caf19fa1d4cd9c4c9f039277.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672682662259222caf19fa1d4cd9c4c9f039277.png)
 
 使用命令`bsdiff old.apk new.apk update.patch` 便可以生成一个名为update.patch的补丁。
 
@@ -49,7 +49,7 @@ cover:
 客户端支持增量更新总体和上面的演示差不多，唯一的区别在于客户端要自行编译bspatch.c来实现合并差分包，也就是所谓的ndk开发，这里我们首先要下载[bsdiff](http://www.daemonology.net/bsdiff/)的源码以及[bszip](http://www.bzip.org/downloads.html)的源码。  
 将bzip中除了.c .h 外的文件全部删除，将整个文件夹复制到AS的JNI目录，同时将bsdiff的源码复制到JNI目录，将bsdiff的代码打开将main方法改成`updatePatch`
 目录结构应该是这样的：
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672682718227b2742aa5b03de5f4366f44c4f38.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672682718227b2742aa5b03de5f4366f44c4f38.png)
 
 bspatch_util其实就是对接收到的Java参数的接收
 ```java

@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "在JetpackCompose中使用输入框（TextField）遇到的一些问题为了更好的阅读体验，在阅读本文之前，你需要对"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726860420webp"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726860420webp"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -25,7 +25,7 @@ Compose 虽然发布已经快一个月了。但是真正用到项目中的应该
 
 日常开发中，类似下面这中搜索功能应该是很常见的需求了，接下来我们就来实现它
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726860420webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726860420webp)
 
 ## TextField 的简单使用
 
@@ -79,7 +79,7 @@ var text by remember { mutableStateOf("") }
 
 然而。。。。、运行后却是这个样子~~~
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726860823webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726860823webp)
 
 1. 多了一个下划线，这个很好去除
 2. 高度不对
@@ -119,7 +119,7 @@ Modifier.fillMaxSize().height(40.dp).padding(start = 20.dp),
 
 查看源代码可以发现。`TextField` 是基于`BasicTextField` 的，在内部写了默认高度：
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726861232webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726861232webp)
 
 那么修改这个默认高度呢，尝试了一下，没有效果
 
@@ -187,11 +187,11 @@ var text by remember { mutableStateOf("") }
 
 运行后效果还是非常接近设计图的：
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726861561webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726861561webp)
 
 输入文字测试一下也没有问题：
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726861984webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726861984webp)
 
 以为这就完了吗？不不，还有一个明显的问题，输入框没有 hint (或者说 placeholder )
 
@@ -235,7 +235,7 @@ decorationBox = { innerTextField ->
 
 运行看看效果：
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726862364webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726862364webp)
 
 可以说是跟效果图几乎一样了，非常完美。
 
@@ -243,7 +243,7 @@ decorationBox = { innerTextField ->
 
 但是！！！！发现点击输入框后不显示光标。这个体验是真的不好。
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726862772webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726862772webp)
 
 如果有多个输入框的情况下，用户根本不知道点的是那个。
 
@@ -259,11 +259,11 @@ decorationBox = { innerTextField ->
 
 用 Box 将两个控件放到一起
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726863142webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726863142webp)
 
 运行后的效果
 
-![webp](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726863587webp)
+![webp](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726863587webp)
 
 这样处理之后，确实是符合要求了，但是感觉写法上不是很优雅。希望评论区能有个更优雅的写法
 

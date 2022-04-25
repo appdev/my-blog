@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -28,7 +28,7 @@ android:clipToPadding=”false”
 android:scrollbarStyle=”outsideOverlay” />
 ```
 总的来说就是，当你为容器（可以滚动的）设置了padding属性之后，你应该同时也设置 效果图如图所示：
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672680706304b4c437e534e3747335f4f8cfc70.gif)
 原文:
 
 Today’s?#AndroidDev?and?#AndroidDesign?#Protip?from+Roman Nurik?is about padding and scroll indicators for scrollable containers like list views.

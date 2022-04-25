@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268523973962129116.png"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268523973962129116.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -72,14 +72,14 @@ fun onMount(
 **需要注意的是，`Conpontent`中修改一个Prop后，其他使用想用Prop的地方也需要修改**
 
 当你按照上面的方法修改并且build后，会自动生成Res,Attr,Dip,Px方法。
-![https://static.apkdv.com/usr/uploads/2020/09/3962129116.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268523973962129116.png)  
+![https://static.apkdv.com/usr/uploads/2020/09/3962129116.png](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268523973962129116.png)  
 你可以像下面这样使用:
 ```java
 PropComponent.create(c).index(14).textRes(R.string.app_name).build()
 ```
  ResType中包含以下这些类型:
 
-![https://static.apkdv.com/usr/uploads/2020/09/3962129116.png](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268527911047998217.png)
+![https://static.apkdv.com/usr/uploads/2020/09/3962129116.png](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268527911047998217.png)
 
 ### 可变属性State
 
@@ -222,7 +222,7 @@ object LazilyUpdateComponentSpec {
 ```
 根据代码，我们在`onCreateLayout`方法中调用了更新State的方法，但是由于是懒更新，所以并不是对布局进行重新计算，所以界面上显示的还是初始化的值。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268531922924476504.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268531922924476504.png)
 
 对上面的代码修改一下，增加一个点击事件，点击后更新另一个State的值:
 ```java
@@ -277,4 +277,4 @@ LazilyUpdateComponentSp: onCreateLayout: TestData
 ```
 同时UI上也被更新:
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268535123514261726.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268535123514261726.png)

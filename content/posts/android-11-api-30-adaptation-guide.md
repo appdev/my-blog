@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268551223689144764.jpg"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268551223689144764.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -38,7 +38,7 @@ cover:
 
 在申请与`位置信息`、`麦克风`或`摄像头`相关的权限时，系统会自动提供一个单次授权的选项，只供这一次权限获取。然后用户下次打开app的时候，系统会再次提示用户授予权限。这个影响应该不大，只要我们每次使用的时候都去判断权限，没有就去申请即可。放一张新版本权限获取样式：
  
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268551223689144764.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268551223689144764.jpg)
 
 
 #### JobScheduler API 调用限制调试
@@ -111,7 +111,7 @@ https://source.android.google.cn/devices/tech/debug/scudo
 
 Android 11 更新主要还是集中在隐私控制这块:
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268557103226951747.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268557103226951747.png)
 
 
 #### 分区存储强制执行
@@ -198,7 +198,7 @@ if (cursor != null) {
 在清单中声明 `MANAGE_EXTERNAL_STORAGE` 权限。  
 使用 `ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION` intent 操作将用户引导至一个系统设置页面，在该页面上，用户可以为应用启用以下选项：授予所有文件的管理权限。  
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268551223689144764.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268551223689144764.jpg)
 
 ```java
  //判断是否获取MANAGE_EXTERNAL_STORAGE权限：
@@ -227,7 +227,7 @@ if (cursor != null) {
 
 将用户引导至系统设置中您应用的页面，请调用包含 `Intent.ACTION_AUTO_REVOKE_PERMISSIONS` intent 操作的 intent。在此屏幕中，用户可以通过执行以下操作来阻止系统重置应用的权限：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268565243235753632.png)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268565243235753632.png)
 
 点按权限，系统会加载应用权限设置屏幕。
 
@@ -308,14 +308,14 @@ requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.p
 ```
 执行效果：  
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726856880668891338.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726856880668891338.jpg)
 
 2. Android11设备，targetSdkVersion<=29(Android 10),申请前台和后台位置权限：
 ```java
 requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_BACKGROUND_LOCATION), 100)
 ```
 执行效果：  
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726857243511464266.jpeg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726857243511464266.jpeg)
 
 
 3. Android11设备，targetSdkVersion=30(Android 11),申请前台和后台位置权限：
@@ -326,7 +326,7 @@ requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.p
 
 4. Android11设备，targetSdkVersion=30(Android 11),先申请前台位置权限，后申请后台位置权限：  
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268579423186618193.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268579423186618193.jpg)
 
 ```java
 requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), 100)
@@ -337,7 +337,7 @@ requestPermissions(arrayOf(Manifest.permission.ACCESS_BACKGROUND_LOCATION), 100)
 ```
 执行效果(直接跳转到设置页面，无任何说明)：  
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268583143880000975.jpeg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268583143880000975.jpeg)
 所以，该怎么适配呢:
 
 - `targetSdkVersion<30`情况下，如果你之前就有判断过前台和后台位置权限，那就无需担心，没有什么需要适配。

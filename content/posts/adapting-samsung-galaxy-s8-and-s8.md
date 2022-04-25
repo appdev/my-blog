@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -19,13 +19,13 @@ cover:
 
 这是未适配的网易新闻  
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726847420894ba9c34f8370b95a7d7e10e627d.jpg)
 
 其实解决APP显示问题，除了第三方应用自行适配S8之外，S8自己也可以进行调节，S8有一个功能叫做“全屏应用程序”  
 
 打开全屏应用之后，效果显而易见：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726847864cabf626bbb375ab93ce5247ef8869.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726847864cabf626bbb375ab93ce5247ef8869.jpg)
 
 下面我们以开发者的身份去分析下这个问题，究其根本这个适配不过是个显示的问题，我们只需要让APP充满全屏就可以，所以我做了如下尝试：
 
@@ -36,11 +36,11 @@ cover:
 
 通过观察发现，凡是完美适配了18.5比9屏幕的App，在系统中已经默认是全屏应用程序了，选择框灰掉无法点击。
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726848243f40d7d3e57426334566bd32fa3c5c.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726848243f40d7d3e57426334566bd32fa3c5c.jpg)
 
 而没有做好适配的App默认是没有打开全屏应用的，用户可以自行随意选择打开或者关闭
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/164672684853378e05bb0bcd0898a7f25790c749ed.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684853378e05bb0bcd0898a7f25790c749ed.jpg)
   
 
 所以判断系统应该是通过检测某个属性或者权限来区分当前App是否做好了适配。最后我们找到了"android.max_aspect"这个属性。

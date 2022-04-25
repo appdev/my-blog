@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "Kotlin在Android上令人惊叹的技巧原文链接:[KotlinawesometricksforAndro"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -21,7 +21,7 @@ cover:
 * 原文作者 : [Antonio Leiva](http://antonioleiva.com/)
 
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726824382743f8069390dc13b7bbafc0f761ba.jpg)
 
 我已经在这个[Blog](http://antonioleiva.com/kotlin)里讨论了很多Kotlin了，现在[Google](https://medium.com/google-developers/kotlin-android-a-brass-tacks-experiment-part-1-3e5028491bcc#.kohpnch41)也正在讨论Kotlin，[Kotlin 1.0 RC](http://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-release-candidate-is-out/) 已经发布了，毫无疑问，Kotlin不仅仅是Android的一个替代选择。Kotlin就在这里，我推荐你开始学习它。
 

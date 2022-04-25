@@ -108,4 +108,4 @@ textView.setText(text)
 
 
   [1]: https://developer.android.com/reference/android/text/StaticLayout
-  [2]: https://gitee.com/huclengyue/my-gallery/raw/master/images/qiniu/1646804609479QQ20180922-180934@2x.png
+  [2]: https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/1646804609479QQ20180922-180934@2x.png

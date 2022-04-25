@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "假设有这样一种场景：小明和小方都是程序员。其中小方会跳舞，当然它们都会编程。用面向对象的方法可以建模如下：因为小明和小方都会写编程，为"
 cover: 
-    image: "https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp"
+    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -19,13 +19,13 @@ cover:
 
 用面向对象的方法可以建模如下：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268725438bf52166-974f-442c-9d42-fbdcb3742148.webp)
 
 因为小明和小方都会写编程，为了复用这个行为，提取了超类 Programmer，它包含所有程序员共用的行为 code()。这样一来，Ming 和 Fang 就能复用编程行为，而不是各自重新实现一遍相同的逻辑。（继承复用了行为）
 
 小慧是一个舞者，再用面向对象的方法建模如下：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/1646726873752e2d2c122-d74c-4d0e-8771-365c5eac70fb.webp)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726873752e2d2c122-d74c-4d0e-8771-365c5eac70fb.webp)
 
 这样的继承关系违反了 DRY 原则，即 Don't repeat yourself.
 
@@ -35,7 +35,7 @@ cover:
 
 那让小方同时继承 Programmer 和 Dancer 能解决问题吗？能！但多重继承容易出事情，比如 “Diamond Problem”：
 
-![](https://gitee.com/huclengyue/my-gallery/raw/master/images/blog/16467268751746c366cb2-3581-45ff-8d43-30c16431a383.webp)
+![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268751746c366cb2-3581-45ff-8d43-30c16431a383.webp)
 
 假设 Human 类中有 eat() 方法，且 Programmer 和 Dancer 都重写了它，此时 Fang 会发生编译报错。因为它不知道自己的 eat() 方法该采用哪一个父类的实现。上面的类图就好像一个钻石的形状，所以称为**Diamond problem**。
 
