@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684257450bae334866f45b8d908fd77f1d50.png"
+    image: "https://static.apkdv.com/blog/blog/164672684257450bae334866f45b8d908fd77f1d50.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -21,7 +21,7 @@ Android 7.0强制启用了被称作 StrictMode的策略，带来的影响就是�
 如果你使用Intent携带这样的URI去打开外部App(比如：打开系统相机拍照)，那么会抛出FileUriExposedException异常。
 
 官方给出解决这个问题的方案，就是使用FileProvider：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684257450bae334866f45b8d908fd77f1d50.png)
+![](https://static.apkdv.com/blog/blog/164672684257450bae334866f45b8d908fd77f1d50.png)
 这是常见的打开系统相机拍照的代码，拍照成功后，照片会存储在picFile文件中。
 
 这段代码在Android 7.0之前是没有任何问题的(奇葩情况忽略~)，但是如果你尝试在7.0的系统上运行(可以用模拟器测试，我也没真机~)，会抛出文章开头提到的`FileUriExposedException`异常。
@@ -97,7 +97,7 @@ res/xml中定义对外暴露的文件夹路径
 物理路径相当于/path/。
 
 这个官方文档并没有给出，我们查看源码可以发现：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726842957c2b856c57174c6157035bd18e7524.png)
+![](https://static.apkdv.com/blog/blog/1646726842957c2b856c57174c6157035bd18e7524.png)
 编写好`file_paths.xml`，我们在manifest中的provider这样使用：
 ```xml
 <provider

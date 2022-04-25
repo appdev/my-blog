@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "Flutter和原生Android控件对比：Flutter控件Android控件AppBarActionBar/ToolBa"
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726849227box_fit_fill.png"
+    image: "https://static.apkdv.com/blog/blog/1646726849227box_fit_fill.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -45,29 +45,29 @@ Image里面的BoxFit参数介绍：（相当于Android的ImageView的scaleType�
   
 // fill 通过篡改原始宽高比来填充目标box
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726849227box_fit_fill.png)
+![](https://static.apkdv.com/blog/blog/1646726849227box_fit_fill.png)
 
 
 /// contain 在尽可能大的情况下，仍然将源完全包含在目标框中。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726849629box_fit_contain.png)
+![](https://static.apkdv.com/blog/blog/1646726849629box_fit_contain.png)
 
 /// cover 尽可能小，同时仍然覆盖整个目标框。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726850041box_fit_cover.png)
+![](https://static.apkdv.com/blog/blog/1646726850041box_fit_cover.png)
 
 /// fitWidth 确保显示源的全部宽度，而不管这是否意味着源垂直溢出目标框。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726850409box_fit_fitWidth.png)
+![](https://static.apkdv.com/blog/blog/1646726850409box_fit_fitWidth.png)
 
 /// fitHeight 确保显示源的全部高度，而不管这是否意味着源水平地溢出目标框。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726850878box_fit_fitHeight.png)
+![](https://static.apkdv.com/blog/blog/1646726850878box_fit_fitHeight.png)
 
   /// none 在目标框中对齐源（默认为居中），并放弃位于框外的源的任何部分。源图像未调整大小。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726851592box_fit_none.png)
+![](https://static.apkdv.com/blog/blog/1646726851592box_fit_none.png)
 
 /// scaleDown 在目标框中对齐源(默认为居中)，如果需要，将源缩小以确保源适合该框。这与contain的内容相同，如果该内容会收缩图像，那么它就是none。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726852084box_fit_scaleDown.png)
+![](https://static.apkdv.com/blog/blog/1646726852084box_fit_scaleDown.png)

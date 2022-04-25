@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "Gihub地址：https://github.com/huclengyue/StateLayoutWithKotlin这个项目是根据St"
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif"
+    image: "https://static.apkdv.com/blog/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -28,7 +28,7 @@ Gihub地址：https://github.com/huclengyue/StateLayoutWithKotlin
 > 下面是原项目的readme部分
 ## 演示
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif)
+![](https://static.apkdv.com/blog/blog/164672684005476c90acc68624a0b786d6abaab5ce.gif)
 ## StateLayout用法
 ## 引入布局
 
@@ -104,7 +104,7 @@ public static final int NOT_NETWORK = 4;
 public static final int LOADING = 5;
 public static final int LOGIN = 6;
 ```
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726840674618a80559e315af67dac93d93af31.png)
+![](https://static.apkdv.com/blog/blog/1646726840674618a80559e315af67dac93d93af31.png)
 
 
 ## 代码设置显示布局
@@ -127,7 +127,7 @@ stateLayout.showLoginView();
 4，设置提示字符串现实
 5，设置提示字符串和图片Id显示
 ```
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726841111574db140600a34f7665586a4721b2.png)
+![](https://static.apkdv.com/blog/blog/1646726841111574db140600a34f7665586a4721b2.png)
 
 ``` java
 //显示加载界面
@@ -142,13 +142,13 @@ stateLayout.showLoadingView();
     3)自定义布局View
     
 ```
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726841802168edaf24954cac388961c190998c.png)
+![](https://static.apkdv.com/blog/blog/1646726841802168edaf24954cac388961c190998c.png)
 ``` java
 //显示自定义界面
 stateLayout.showCustomView();
 ```
 设置替换成自定义的界面:
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684223218503e53391dac2c0c420b6e7e9a4.png)
+![](https://static.apkdv.com/blog/blog/164672684223218503e53391dac2c0c420b6e7e9a4.png)
 
 
 ## 设置切换界面动画

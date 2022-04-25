@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 # description: "Desc Text."
 # cover:
-#     image: "![17_4CHFuM](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_07/17_4CHFuM.webp)" # image path/url
+#     image: "![17_4CHFuM](https://static.apkdv.com/blog/2022_03_07/17_4CHFuM.webp)" # image path/url
 #      alt: "alt text" # image alt text
 #     caption: "<text>" # 详情页图片下面的文字
 #     relative: false # when using page bundles set this to true
@@ -33,7 +33,7 @@ Hugo 如何安装配置网上很多这里不再赘述，主要说一下我是如
 2. 不方便自动化处理，虽然通过github action + 云函数 + hook 可以做到更新仓库后自动构建，下载到 COS 但还是略显麻烦。需要配置好几个地方。
 
 最终选择了部署在 https://vercel.com 国内访问速度开可以。可以关联 github 仓库，不需要自动设置，可以自定义域名，似乎能自动配置 SSL 证书（表现为我设置了域名后访问自动变成 https ,证书是 `Let's Encrypt` 的免费证书）最后来个测速。
-![11_LaMBoH](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_11/11_LaMBoH.png)
+![11_LaMBoH](https://static.apkdv.com/blog/2022_03_11/11_LaMBoH.png)
 
 ## 文章迁移
 
@@ -51,7 +51,7 @@ TocOpen: true
 draft: false
 # description: "Desc Text."
 # cover:
-#     image: "![17_4CHFuM](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/2022_03_07/17_4CHFuM.webp)" # image path/url
+#     image: "![17_4CHFuM](https://static.apkdv.com/blog/2022_03_07/17_4CHFuM.webp)" # image path/url
 #      alt: "alt text" # image alt text
 #     caption: "<text>" # 详情页图片下面的文字
 #     relative: false # when using page bundles set this to true

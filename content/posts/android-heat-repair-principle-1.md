@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268210240a01f6a2c2c5b237a032db35b7084.png"
+    image: "https://static.apkdv.com/blog/blog/16467268210240a01f6a2c2c5b237a032db35b7084.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -25,11 +25,11 @@ cover:
 ### 2.解决方案：
 
 &emsp;&emsp;java的JVM中加载类的都是`ClassLoader`这个类，查看`ClassLoader`这个类的源代码：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268210240a01f6a2c2c5b237a032db35b7084.png)
+![](https://static.apkdv.com/blog/blog/16467268210240a01f6a2c2c5b237a032db35b7084.png)
 可以看到在`ClassLoader`中会先检查这个类是不是已经被 loaded 过，没有的话则去他的 parent 去找，如此递归。  
 
 再来看看Android的类加载器`BaseDexClassLoader`它继承自`ClassLoader`,位置在：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726821421954905ce06782ca5f696a3888498c.png)  
+![](https://static.apkdv.com/blog/blog/1646726821421954905ce06782ca5f696a3888498c.png)  
 
 它的子类有两个`PathClassLoader`和`DexClassLoader`。  
 
@@ -54,14 +54,14 @@ cover:
 ### 3.代码分析  
 
 `DexClassLoader`中只有个简单的方法，所以来看它的基类的BaseDexClassLoader [源代码](https://android.googlesource.com/platform/libcore-snapshot/+/ics-mr1/dalvik/src/main/java/dalvik/system/BaseDexClassLoader.java),可以看到有一个方法findClass，这个方法中一个pathList对象，所有的类都从pathList查找
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672682175491d63e48f8ad9ae7c93f4e7a5b190.png)
+![](https://static.apkdv.com/blog/blog/164672682175491d63e48f8ad9ae7c93f4e7a5b190.png)
 
 查看`pathList`[这个对象的源码](https://android.googlesource.com/platform/libcore-snapshot/+/ics-mr1/dalvik/src/main/java/dalvik/system/DexPathList.java):  
 从源代码中可以看到，这个类中存在一个对象dexElements，他是一个Element数组。Element是DexPathList的静态内部类。关于Element的注释已已经说的很清楚了：
 `Element of the dex/resource file path`，再来看看这个方法makeDexElements：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268221308e1a0a0cdf6a4d6a1f844306327aa.png)
+![](https://static.apkdv.com/blog/blog/16467268221308e1a0a0cdf6a4d6a1f844306327aa.png)
 从这个方法可以看到，系统会先对文件进行遍历分类，然后将分类后的文件添加到elements这个ArrayList中，最后将ArrayList转为数组。  
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726823479b397bf35715a45fc3999b01ed5a7d.png)
+![](https://static.apkdv.com/blog/blog/1646726823479b397bf35715a45fc3999b01ed5a7d.png)
 这个就是在BaseDexClassLoader中调用到的findClass方法，这个方法返回一个Class，它通过类名进行加载，内部是遍历上面的Element数组。
 
 

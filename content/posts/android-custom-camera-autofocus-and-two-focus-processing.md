@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726827543QQ20180706-114646.png"
+    image: "https://static.apkdv.com/blog/blog/1646726827543QQ20180706-114646.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -41,7 +41,7 @@ cover:
 在一部分手机上，始终只对焦一次，也就是说根本不能实现。
 还见部分博客把autoFocus()方法放在Camera预览SurfaceView的surfaceChanged()中的一些实现，发现也只对焦了一次。
 #### 设置对焦模式FOCUS_MODE_CONTINUOUS_PICTURE
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726827543QQ20180706-114646.png)
+![](https://static.apkdv.com/blog/blog/1646726827543QQ20180706-114646.png)
 经过测试，发现大部分手机可以连续对焦，但是在对焦过程中屏幕会连续闪烁，而且体验极其不好。魅族MX4不支持此种方式的对焦。也就是说第二，第三种方案都要放弃。
 #### 触摸对焦
 ```java

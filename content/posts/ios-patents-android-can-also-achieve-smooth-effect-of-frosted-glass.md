@@ -9,13 +9,13 @@ TocOpen: true
 draft: false
 descriptionDelete: "背景介绍上图就是我们在IOS设备上经常能够见到的毛玻璃(高斯模糊)效果。不得不说，这种效果在适合的场景下使用，能够获得绝佳的美感。但是鉴于"
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726843423e828301e9bb83ebb14e1396324167.png"
+    image: "https://static.apkdv.com/blog/blog/1646726843423e828301e9bb83ebb14e1396324167.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
 ---
                 
-![高斯模糊例图](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726843423e828301e9bb83ebb14e1396324167.png)
+![高斯模糊例图](https://static.apkdv.com/blog/blog/1646726843423e828301e9bb83ebb14e1396324167.png)
 ## 背景介绍
 上图就是我们在IOS设备上经常能够见到的毛玻璃(高斯模糊)效果。不得不说，这种效果在适合的场景下使用，能够获得绝佳的美感。但是鉴于Android设备性能和兼容性问题，我们通常很难在Android设备上见到这种效果。
 但这并不是IOS的专利效果，Android也能轻松流畅的实现。本篇文章将会详细的讲解如何实现。
@@ -52,9 +52,9 @@ RenderScript提供了一个用于实现高斯模糊的封装类ScriptIntrinsicBl
 你以为这样就好了？nonono。  
 由于一些坑人的厂商会深度定制Android系统，所以一些必要的依赖文件会被它们直接去掉！！这导致一些型号的设备上调用RenderScriptd的部分方法时会报错。所以我们得加上这些可能丢失的文件。  
 其实也简单，打开`android_sdk/build-tools/`选择19以上版本`/renderscript/lib/packaged`我们可以看见3个包含.os文件的文件夹。
-![SO文件](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268440385c5249ec1623416297fc054bef4e0.png)
+![SO文件](https://static.apkdv.com/blog/blog/16467268440385c5249ec1623416297fc054bef4e0.png)
 直接复制这三个文件加到项目工程的jniLibs 包下。什么？找不见jniLibs包？自己建一个喽。
-![jniLibs文件夹](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672684444382d27bba64fe05e3d052ff27fa4b6.png)
+![jniLibs文件夹](https://static.apkdv.com/blog/blog/164672684444382d27bba64fe05e3d052ff27fa4b6.png)
 注意，这时候，我们很可能遇到一个崩溃，找不到.os文件。莫慌莫慌...
 在build.gradle的android{}中加入：
 ```
@@ -70,7 +70,7 @@ sourceSets {
 ```
 ## 实现高斯模糊
 终于可以开始写代码了。先来看看效果。下图高斯模糊半径逐渐增大的效果，请忽略渣渣录屏效果
-![效果图](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726844970d7f64768e2a9b60a5fbea888cd96a.gif)
+![效果图](https://static.apkdv.com/blog/blog/1646726844970d7f64768e2a9b60a5fbea888cd96a.gif)
 - 将ScriptIntrinsicBlur封装成工具类。咱们代码里接着款
 ```java
 import android.support.v8.renderscript.*;  //这句很重要啊，v8包的，不然不能向下兼容啊。
@@ -176,7 +176,7 @@ btn2.setOnClickListener(v -> {
 系统：Android 5.1
 
 上图高斯模糊时的CPU及内存变化：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268467126ead393248ac9962bfc9da7f68709.gif)
+![](https://static.apkdv.com/blog/blog/16467268467126ead393248ac9962bfc9da7f68709.gif)
 从上图可以看到，即使我原本在播放一个动画时的CPU使用率大概在6% 左右。在开始高斯模糊运算后，随着高斯模糊半径的逐渐增大，CPU峰值最大也就在21.3%。可见这种解决方案的效率是极高的。
 
 ## 总结

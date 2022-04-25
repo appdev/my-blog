@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "Litho底层使用的是Yoga,Yoga是Facebook的另一个开源项目，它是一个跨iOS、Android、Windows平台在内的布局引"
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268538543844186644.png"
+    image: "https://static.apkdv.com/blog/blog/16467268538543844186644.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -27,10 +27,10 @@ https://yogalayout.com/playground
 你可以通过它可视化的调整UI，构建你需要的layout。同时可以生成相应的Litho代码
 
 在线可视化构建UI:
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268538543844186644.png)
+![](https://static.apkdv.com/blog/blog/16467268538543844186644.png)
 
 直接生成的Litho代码:
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726854374910837438.png)
+![](https://static.apkdv.com/blog/blog/1646726854374910837438.png)
 
 
 在 Flexbox 中可以通过 positionType(ABSOLUTE)属性来实现Android 中的 `FrameLayout`效果：
@@ -56,4 +56,4 @@ https://yogalayout.com/playground
 ```
 
 运行效果:  
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268547972346767400.png)
+![](https://static.apkdv.com/blog/blog/16467268547972346767400.png)

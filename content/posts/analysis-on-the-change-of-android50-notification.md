@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png"
+    image: "https://static.apkdv.com/blog/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -30,8 +30,8 @@ cover:
 简单的说就是5.0后Android官方建议不要为通知的图标添加任何额外的透明度，渐变色，不要企图用颜色将通知图标与其他应用，比如系统应用，应用的通知图标只能是在透明的背景上有白色的图案。
 至于原因，文档并没有细说，只是提到5.0系统将会在底层处理图标，想知怎么处理的可以参考Android SDK API level 21后的Notificaiton源码，里面写的较详细。
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png)
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268088273fecae50459b0568fffeb9db9c21b.png)
+![](https://static.apkdv.com/blog/blog/1646726808019e559e8f7eacfb8d1c656b17d057be.png)
+![](https://static.apkdv.com/blog/blog/16467268088273fecae50459b0568fffeb9db9c21b.png)
 结合文档提供的图片示例，应该可以理解。
 如果不遵循建议那么有很大几率是会出上文提到问题的，为什么不是别然出问题呢？
 这还依赖于代码编译的版本，根据尝试，目前api 21以后编译会出问题，20及以前的版本编译不会出问题。所以解决问题比较简单粗暴的方案是用20及更早的版本编译代码。但是要测底解决问题，还是得遵循文档指导，及从新设计通知的图标以符合要求。

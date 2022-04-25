@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 descriptionDelete: "定义​内存泄漏也称作“存储渗漏”，用动态存储分配函数动态开辟的空间，在使用完毕后未释放，结果导致一直占据该内存单元。直到程序结束。"
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268248159ddf103ea1b684d296427e770344c.jpg"
+    image: "https://static.apkdv.com/blog/blog/16467268248159ddf103ea1b684d296427e770344c.jpg"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -54,13 +54,13 @@ Thread
 
 慎用Context [Context概念](http://blog.csdn.net/lmj623565791/article/details/40481055)  
 四大组件Context和Application的context使用参见下表
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268248159ddf103ea1b684d296427e770344c.jpg)  
+![](https://static.apkdv.com/blog/blog/16467268248159ddf103ea1b684d296427e770344c.jpg)  
 
 **善用Reference  **
 >[Java引用介绍](http://blog.csdn.net/mazhimazh/article/details/19752475)    
 Java四种引用由高到低依次为：强引用  >  软引用  >  弱引用  >  虚引用
 表格说明
->![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/1646804612724a9369a283f0c17bb1be4ca07fc2c2.png)
+>![](https://static.apkdv.com/blog/qiniu/1646804612724a9369a283f0c17bb1be4ca07fc2c2.png)
 
 **复用ConvertView  **
 >[复用详解](http://blog.csdn.net/lmj623565791/article/details/24333277) 
@@ -253,7 +253,7 @@ java.lang.Throwable: Explicit termination method 'close' not called
           ActivityUtil.getAppManager().remove(this);
       }
 ```
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268251914d8c3041e1e52914713e2406bd224.png)
+![](https://static.apkdv.com/blog/blog/16467268251914d8c3041e1e52914713e2406bd224.png)
 
 **静态变量持有Context实例泄露**
 
@@ -296,7 +296,7 @@ public static void HttpUtilPost(Context context, int TaskId, String url, String 
     }
 
 ```
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672682570063ec54b412a652adf592348668a8c.png)
+![](https://static.apkdv.com/blog/blog/164672682570063ec54b412a652adf592348668a8c.png)
 **Context泄露**
 
 Callback泄露

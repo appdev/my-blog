@@ -9,7 +9,7 @@ TocOpen: true
 draft: false
 
 cover: 
-    image: "https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726815222c0fc5fdad65792a487ea475abf2ff.png"
+    image: "https://static.apkdv.com/blog/blog/1646726815222c0fc5fdad65792a487ea475abf2ff.png"
     # alt: "alt text" # image alt text
     # caption: "display caption under cover" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -192,11 +192,11 @@ RxJava 的异步实现，是通过一种扩展的观察者模式来实现的。
 观察者模式面向的需求是：A 对象（观察者）对 B 对象（被观察者）的某种变化高度敏感，需要在 B 变化的一瞬间做出反应。举个例子，新闻里喜闻乐见的警察抓小偷，警察需要在小偷伸手作案的时候实施抓捕。在这个例子里，警察是观察者，小偷是被观察者，警察需要时刻盯着小偷的一举一动，才能保证不会漏过任何瞬间。程序的观察者模式和这种真正的『观察』略有不同，观察者不需要时刻盯着被观察者（例如 A 不需要每过 2ms 就检查一次 B 的状态），而是采用**注册**(Register)**或者称为**订阅**(Subscribe)**的方式，告诉被观察者：我需要你的某某状态，你要在它变化的时候通知我。 Android 开发中一个比较典型的例子是点击监听器 `OnClickListener` 。对设置 `OnClickListener` 来说， `View` 是被观察者， `OnClickListener` 是观察者，二者通过 `setOnClickListener()` 方法达成订阅关系。订阅之后用户点击按钮的瞬间，Android Framework 就会将点击事件发送给已经注册的 `OnClickListener` 。采取这样被动的观察方式，既省去了反复检索状态的资源消耗，也能够得到最高的反馈速度。当然，这也得益于我们可以随意定制自己程序中的观察者和被观察者，而警察叔叔明显无法要求小偷『你在作案的时候务必通知我』。
 
 OnClickListener 的模式大致如下图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726815222c0fc5fdad65792a487ea475abf2ff.png)
+![](https://static.apkdv.com/blog/blog/1646726815222c0fc5fdad65792a487ea475abf2ff.png)
 
 如图所示，通过 `setOnClickListener()` 方法，`Button` 持有 `OnClickListener` 的引用（这一过程没有在图上画出）；当用户点击时，`Button` 自动调用 `OnClickListener` 的 `onClick()` 方法。另外，如果把这张图中的概念抽象出来（`Button` -&gt; 被观察者、`OnClickListener` -&gt; 观察者、`setOnClickListener()` -&gt; 订阅，`onClick()` -&gt; 事件），就由专用的观察者模式（例如只用于监听控件点击）转变成了通用的观察者模式。如下图：
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/164672681566818b20a985b1ebf1cf9fd6446716b5.png)
+![](https://static.apkdv.com/blog/blog/164672681566818b20a985b1ebf1cf9fd6446716b5.png)
 
 而 RxJava 作为一个工具库，使用的就是通用形式的观察者模式。
 
@@ -210,7 +210,7 @@ RxJava 有四个基本概念：`Observable` (可观察者，即被观察者)、 
 *   `onError()`: 事件队列异常。在事件处理过程中出异常时，`onError()` 会被触发，同时队列自动终止，不允许再有事件发出。
 *   在一个正确运行的事件序列中, `onCompleted()` 和 `onError()` 有且只有一个，并且是事件序列中的最后一个。需要注意的是，`onCompleted()` 和 `onError()` 二者也是互斥的，即在队列中调用了其中一个，就不应该再调用另一个。
 RxJava 的观察者模式大致如下图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/1646804611316272fe2d630e6c3f8a309e4551f0de.png)
+![](https://static.apkdv.com/blog/qiniu/1646804611316272fe2d630e6c3f8a309e4551f0de.png)
 
 #### 2. 基本实现
 
@@ -333,10 +333,10 @@ public Subscription subscribe(Subscriber subscriber) {
 2.  调用 `Observable` 中的 `OnSubscribe.call(Subscriber)` 。在这里，事件发送的逻辑开始运行。从这也可以看出，在 RxJava 中，`Observable` 并不是在创建的时候就立即开始发送事件，而是在它被订阅的时候，即当 `subscribe()` 方法执行的时候。
 3.  将传入的 `Subscriber` 作为 `Subscription` 返回。这是为了方便 `unsubscribe()`.
 整个过程中对象间的关系如下图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/16468046117870d650202304887fbb74de90cf4fef.png)
+![](https://static.apkdv.com/blog/qiniu/16468046117870d650202304887fbb74de90cf4fef.png)
 或者可以看动图：
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268160027e858630ed6e0ea107d3bf606f72a.gif)
+![](https://static.apkdv.com/blog/blog/16467268160027e858630ed6e0ea107d3bf606f72a.gif)
 
 除了 `subscribe(Observer)` 和 `subscribe(Subscriber)` ，`subscribe()` 还支持不完整定义的回调，RxJava 会自动根据定义创建出`Subscriber` 。形式如下：
 ```java
@@ -426,7 +426,7 @@ Observable.create(new OnSubscribe&lt;Drawable&gt;() {
 
 然而，
 
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726816698c24be3d06754c800fc9f1b4b885fe.png)
+![](https://static.apkdv.com/blog/blog/1646726816698c24be3d06754c800fc9f1b4b885fe.png)
 
 在 RxJava 的默认规则中，事件的发出和消费都是在同一个线程的。也就是说，如果只用上面的方法，实现出来的只是一个同步的观察者模式。观察者模式本身的目的就是『后台处理，前台回调』的异步机制，因此异步对于 RxJava 是至关重要的。而要实现异步，则需要用到 RxJava 的另一个概念： `Scheduler` 。
 
@@ -530,7 +530,7 @@ Observable.just("images/logo.png") // 输入类型 String
 可以看到，`map()` 方法将参数中的 `String` 对象转换成一个 `Bitmap` 对象后返回，而在经过 `map()` 方法后，事件的参数类型也由 `String`转为了 `Bitmap`。这种直接变换对象并返回的，是最常见的也最容易理解的变换。不过 RxJava 的变换远不止这样，它不仅可以针对事件对象，还可以针对整个事件队列，这使得 RxJava 变得非常灵活。我列举几个常用的变换：
 
 *   `map()`: 事件对象的直接变换，具体功能上面已经介绍过。它是 RxJava 最常用的变换。 `map()` 的示意图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/qiniu/1646804612189f6848fb7655e5e569e2e6fbc76197.png)
+![](https://static.apkdv.com/blog/qiniu/1646804612189f6848fb7655e5e569e2e6fbc76197.png)
 
         <li>`flatMap()`: 这是一个很有用但**非常难理解**的变换，因此我决定花多些篇幅来介绍它。 首先假设这么一种需求：假设有一个数据结构『学生』，现在需要打印出一组学生的名字。实现方式很简单：
 ```java
@@ -595,7 +595,7 @@ Observable.from(students)
 从上面的代码可以看出， `flatMap()` 和 `map()` 有一个相同点：它也是把传入的参数转化之后返回另一个对象。但需要注意，和 `map()`不同的是， `flatMap()` 中返回的是个 `Observable` 对象，并且这个 `Observable` 对象并不是被直接发送到了 `Subscriber` 的回调方法中。 `flatMap()` 的原理是这样的：1. 使用传入的事件对象创建一个 `Observable` 对象；2. 并不发送这个 `Observable`, 而是将它激活，于是它开始发送事件；3. 每一个创建出来的 `Observable` 发送的事件，都被汇入同一个 `Observable` ，而这个 `Observable` 负责将这些事件统一交给 `Subscriber` 的回调方法。这三个步骤，把事件拆成了两级，通过一组新创建的 `Observable` 将初始的对象『铺平』之后通过统一路径分发了下去。而这个『铺平』就是 `flatMap()` 所谓的 flat。
 
 `flatMap()` 示意图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726817100c245e1067e80f87052f74e23396e9.png)
+![](https://static.apkdv.com/blog/blog/1646726817100c245e1067e80f87052f74e23396e9.png)
 
 扩展：由于可以在嵌套的 `Observable` 中添加异步代码， `flatMap()` 也常用于嵌套的异步操作，例如嵌套的网络请求。示例代码（Retrofit RxJava）：
 ```java
@@ -659,13 +659,13 @@ public &lt;R&gt; Observable&lt;R&gt; lift(Operator&lt;? extends R, ? super T&gt;
 精简掉细节的话，也可以这么说：在 `Observable` 执行了 `lift(Operator)` 方法之后，会返回一个新的 `Observable`，这个新的`Observable` 会像一个代理一样，负责接收原始的 `Observable` 发出的事件，并在处理后发送给 `Subscriber`。
 
 如果你更喜欢具象思维，可以看图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268176142feb089e88603bc1ea2e6d0190626.png)
+![](https://static.apkdv.com/blog/blog/16467268176142feb089e88603bc1ea2e6d0190626.png)
 
 或者可以看动图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726818088dd27269c6db911bd74768331e7967.gif)
+![](https://static.apkdv.com/blog/blog/1646726818088dd27269c6db911bd74768331e7967.gif)
 
 两次和多次的 `lift()` 同理，如下图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726818947ca764d45cd01ec42a93505186fcea.png)
+![](https://static.apkdv.com/blog/blog/1646726818947ca764d45cd01ec42a93505186fcea.png)
 
 举一个具体的 `Operator` 的实现。下面这是一个将事件中的 `Integer` 对象转换成 `String` 的例子，仅供参考：
 ```java
@@ -795,15 +795,15 @@ Observable.just(1, 2, 3, 4) // IO 线程，由 subscribeOn() 指定
 其实， `subscribeOn()` 和 `observeOn()` 的内部实现，也是用的 `lift()`。具体看图（不同颜色的箭头表示不同的线程）：
 
 `subscribeOn()` 原理图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726819455f27e6c912f88debf855cc598fd68e.png)
+![](https://static.apkdv.com/blog/blog/1646726819455f27e6c912f88debf855cc598fd68e.png)
 
 `observeOn()` 原理图：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/1646726819967d2f3f51a6592ece9283d880b20d44.png)
+![](https://static.apkdv.com/blog/blog/1646726819967d2f3f51a6592ece9283d880b20d44.png)
 
 从图中可以看出，`subscribeOn()` 和 `observeOn()` 都做了线程切换的工作（图中的 "schedule..." 部位）。不同的是， `subscribeOn()`的线程切换发生在 `OnSubscribe` 中，即在它通知上一级 `OnSubscribe` 时，这时事件还没有开始发送，因此 `subscribeOn()` 的线程控制可以从事件发出的开端就造成影响；而 `observeOn()` 的线程切换则发生在它内建的 `Subscriber` 中，即发生在它即将给下一级`Subscriber` 发送事件时，因此 `observeOn()` 控制的是它后面的线程。
 
 最后，我用一张图来解释当多个 `subscribeOn()` 和 `observeOn()` 混合使用时，线程调度是怎么发生的（由于图中对象较多，相对于上面的图对结构做了一些简化调整）：
-![](https://myblog-1251192683.cos.ap-shanghai.myqcloud.com/images/blog/16467268204261fe360ea97808d6ae5f6855089bb9.png)
+![](https://static.apkdv.com/blog/blog/16467268204261fe360ea97808d6ae5f6855089bb9.png)
 
 图中共有 5 处含有对事件的操作。由图中可以看出，①和②两处受第一个 `subscribeOn()` 影响，运行在红色线程；③和④处受第一个`observeOn()` 的影响，运行在绿色线程；⑤处受第二个 `onserveOn()` 影响，运行在紫色线程；而第二个 `subscribeOn()` ，由于在通知过程中线程就被第一个 `subscribeOn()` 截断，因此对整个流程并没有任何影响。这里也就回答了前面的问题：当使用了多个`subscribeOn()` 的时候，只有第一个 `subscribeOn()` 起作用。
 
