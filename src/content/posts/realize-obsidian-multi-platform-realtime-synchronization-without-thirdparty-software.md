@@ -13,7 +13,9 @@ draft: false
 这也是我为什么从 9 月多就接触了 Obsidian 但是一没有最为主力的原因。虽然印象笔记已经非常的不好用，但是他的同步真的非常的方便。
 直到最近在翻看 Obsidian 的插件的时候接触到了这个插件 `Self-hosted LiveSync`（虽然也有一款支持 WebDav 的插件，但是试了一下连不上服务器，作者说目前 WebDav 还在测试中）这个插件真的非常的棒 👍🏻。实现了无感同步，甚至可以多平台实时同步。
 引用一张作者的图：
-![](https://user-images.githubusercontent.com/45774780/137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif)
+
+<img src="https://user-images.githubusercontent.com/45774780/137355323-f57a8b09-abf2-4501-836c-8cb7d2ff24a3.gif" alt="gif" />
+
 ### 搭建服务器端
 `Self-hosted LiveSync` 使用的是 [CouchDB](https://zh.wikipedia.org/wiki/CouchDB) 数据库，这是一个开源的具有版本控制的文档数据库。
 > 你可使用 IBM 提供的 CouchDB 数据库，这里有作者写的教程  https://github.com/vrtmrz/obsidian-livesync/blob/main/docs/setup_cloudant.md
