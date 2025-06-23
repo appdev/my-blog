@@ -99,41 +99,7 @@ export const themeConfig: ThemeConfig = {
 
     // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
     seo: {
-        // @twitter ID
-        twitterID: "@huclengyue",
-        // site verification
-        verification: {
-            // google search console
-            // https://search.google.com/search-console
-            google: "",
-            // bing webmaster tools
-            // https://www.bing.com/webmasters
-            bing: "",
-            // yandex webmaster
-            // https://webmaster.yandex.com
-            yandex: "",
-            // baidu search
-            // https://ziyuan.baidu.com
-            baidu: "",
-        },
-        // google analytics
-        // https://analytics.google.com
-        googleAnalyticsID: "",
-        // umami analytics
-        // https://cloud.umami.is
         umamiAnalyticsID: "36be4b1a-531f-4d34-8225-80c3ef9444e4",
-        // follow verification
-        // https://follow.is/
-        follow: {
-            // feed ID
-            feedID: "",
-            // user ID
-            userID: "",
-        },
-        // apiflash access key
-        // automatically generate website screenshots for open graph images
-        // get your access key at: https://apiflash.com/
-        apiflashKey: "",
     },
     // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
