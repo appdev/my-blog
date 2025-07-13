@@ -4,7 +4,13 @@ published: 2025-07-13T14:26:55.726Z
 description: ''
 updated: ''
 tags:
-  - Note
+  [
+    安卓,
+    液态玻璃效果,
+    界面设计,
+    用户体验,
+    视觉效果
+  ]
 draft: false
 pin: 0
 toc: true
@@ -125,7 +131,6 @@ vec2 refractedCoord = originalCoord + refractionDistance * refractionDirection;
 | `sdfGradient` | vec2 | SDF梯度向量 | 归一化向量 |
 | `normalizedCenterOffset` | vec2 | 中心偏移向量 | 归一化向量 |
 
----
 
 ## 2. 渗透系统 (Penetration System)
 
@@ -179,8 +184,6 @@ vec2 refractedCoord = originalCoord + refractionDistance * refractionDirection;
 - **性能警告：** 过大的模糊半径可能导致滑动时的视觉跳变
 - **优化建议：** 根据设备性能动态调整模糊参数
 
----
-
 ## 3. 性能优化建议
 
 ### 3.1 计算优化
@@ -192,8 +195,6 @@ vec2 refractedCoord = originalCoord + refractionDistance * refractionDirection;
 - **分层渲染：** 分离折射和渗透的渲染通道
 - **纹理压缩：** 使用适当的纹理格式减少带宽
 - **批处理：** 合并相似的玻璃效果对象
-
----
 
 ## 4. 实现注意事项
 
