@@ -35,7 +35,7 @@ iOS 的液态玻璃折射系统采用双层折射架构，包含内折射和外�
 内折射是液态玻璃效果的核心组件，通过以下关键参数进行精确控制：
 
 #### 1.2.1 折射量 (Refraction Amount)
-<img src="https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417418384.jpg" alt="折射量效果对比" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src="https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417418384.jpg" alt="折射量效果对比" style="max-width: 60%;" />
 
 **技术特性：**
 - **数值范围：** 负数值，控制折射内容的强度
@@ -44,12 +44,12 @@ iOS 的液态玻璃折射系统采用双层折射架构，包含内折射和外�
 
 #### 1.2.2 折射高度 (Refraction Height)
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417423223.jpg'  alt="折射高度效果 - 小" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417423223.jpg'  alt="折射高度效果 - 小" style="max-width: 60%; " />
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417421410.jpg' alt="折射高度效果 - 中" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417421410.jpg' alt="折射高度效果 - 中" style="max-width: 60%; " />
   
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417419710.jpg' alt="折射高度效果 - 大" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417419710.jpg' alt="折射高度效果 - 大" style="max-width: 60%; " />
 *图2c: 折射高度效果 - 大*
 
 **技术特性：**
@@ -61,7 +61,7 @@ iOS 的液态玻璃折射系统采用双层折射架构，包含内折射和外�
 
 #### 1.3.1 标准离心模式
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417401771.jpg' alt="离心效果" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417401771.jpg' alt="离心效果" style="max-width: 60%; " />
 *图3: 离心效果 - 展示了具有离心效果的玻璃折射，可以看到从中心向外扩散的视觉效果*
 
 **实现机制：**
@@ -72,7 +72,7 @@ iOS 的液态玻璃折射系统采用双层折射架构，包含内折射和外�
 #### 1.3.2 纯梯度模式
 
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417409425.jpg' alt="纯梯度效果" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417409425.jpg' alt="纯梯度效果" style="max-width: 60%; " />
 *图4: 纯梯度效果 - 展示了没有离心效果的玻璃折射（仅SDF梯度），主要用于锁屏界面*
 
 **应用场景：**
@@ -87,7 +87,7 @@ iOS 的液态玻璃折射系统采用双层折射架构，包含内折射和外�
 ### 1.5 渗色效果 (Color Bleeding)
 
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417406133.jpg' alt="渗色效果" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417406133.jpg' alt="渗色效果" style="max-width: 60%; " />
 *图5: 渗色效果 - 展示了渗色效果与模糊的配合，颜色会自然扩散*
 
 渗色效果与高斯模糊协同工作，创造更加自然的光线扩散效果。
@@ -138,28 +138,28 @@ vec2 refractedCoord = originalCoord + refractionDistance * refractionDirection;
 #### 2.2.1 渗透量对比
 
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417413603.jpg' alt="渗透量对比" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417413603.jpg' alt="渗透量对比" style="max-width: 60%; " />
 渗透量对比 - 对比了无渗透效果和不同渗透量（-80, -110）下的视觉差异*
 
 #### 2.2.2 吸色效果
 
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417404453.jpg' alt="吸色效果" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417404453.jpg' alt="吸色效果" style="max-width: 60%; " />
 吸色效果 - 展示了"吸色"效果，玻璃左上角的"15"数字颜色被吸走*
 
 #### 2.2.3 混合渲染
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417407456.jpg' alt="混合渲染效果" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417407456.jpg' alt="混合渲染效果" style="max-width: 60%; " />
  混合效果 - 展示了50%折射+50%渗透的混合渲染效果*
 
 
 
-<img  src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417415964.jpg' alt="渗透效果详细展示" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img  src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417415964.jpg' alt="渗透效果详细展示" style="max-width: 60%; " />
 渗透效果详细展示 - 展示了渗透系统的详细工作机制*
 
 #### 2.2.4 高斯模糊集成
 
-<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417411525.jpg' alt="高斯模糊集成" style="max-width: 80%; height: auto; display: block; margin: 10px auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<img src='https://cdn.jsdelivr.net/gh/appdev/gallery@main/img/2025-07-13/1752417411525.jpg' alt="高斯模糊集成" style="max-width: 60%; " />
 模糊集成 - 展示了叠加高斯模糊的渗透层效果*
 
 ### 2.3 技术参数
