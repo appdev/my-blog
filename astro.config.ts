@@ -20,6 +20,7 @@ import { rehypeImgToFigure } from './src/plugins/rehype-img-to-figure.mjs'
 import { rehypeUnwrapImg } from './src/plugins/rehype-unwrap-img.mjs'
 import { remarkAdmonitions } from './src/plugins/remark-admonitions.mjs'
 import { remarkGithubCard } from './src/plugins/remark-github-card.mjs'
+import { remarkGalleryRawImages } from './src/plugins/remark-gallery-raw-images.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
 import vercel from '@astrojs/vercel';
@@ -77,6 +78,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkDirective,
+      remarkGalleryRawImages,
       remarkMath,
       remarkAdmonitions,
       remarkGithubCard,
