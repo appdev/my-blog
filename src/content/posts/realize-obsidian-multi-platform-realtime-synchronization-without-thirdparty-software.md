@@ -47,9 +47,9 @@ headers = accept, authorization, content-type, origin, referer
 methods = GET, PUT, POST, HEAD, DELETE
 max_age = 3600
 ```
-配置文件创建完成后，就可以启动 CouchDB：
+配置文件创建完成后，就可以启动 CouchDB：命令中的 `YOUR_USERNAME` 和 `YOUR_PASSWORD` 是占位符，请换成自己设置的账号和密码。
 ````shell
-docker run --rm -it -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -v /opt/couchdb/db:/opt/couchdb/data -v /opt/couchdb/local.ini:/opt/couchdb/etc/local.ini -p 6900:5984 couchdb
+docker run --rm -it -e COUCHDB_USER=YOUR_USERNAME -e COUCHDB_PASSWORD=YOUR_PASSWORD -v /opt/couchdb/db:/opt/couchdb/data -v /opt/couchdb/local.ini:/opt/couchdb/etc/local.ini -p 6900:5984 couchdb
 ````
 其中:
 `COUCHDB_USER` 后面的是你的密码
@@ -74,7 +74,7 @@ http://你的 IP:你的端口
 ![webp](https://raw.githubusercontent.com/appdev/gallery/refs/heads/main/img/blog/blog/1646726867185.webp)
 群辉无需其他设置。云服务器用户再次执行（注意替换端口、账号密码）：
 ```shell
-docker run -d --restart always  -e COUCHDB_USER=admin -e COUCHDB_PASSWORD=password -v /opt/couchdb/db:/opt/couchdb/data -v /opt/couchdb/local.ini:/opt/couchdb/etc/local.ini -p 6900:5984 couchdb
+docker run -d --restart always  -e COUCHDB_USER=YOUR_USERNAME -e COUCHDB_PASSWORD=YOUR_PASSWORD -v /opt/couchdb/db:/opt/couchdb/data -v /opt/couchdb/local.ini:/opt/couchdb/etc/local.ini -p 6900:5984 couchdb
 ```
 让这个镜像在后台运行，并且自动启动。
 后端部分暂时就配置完成了。

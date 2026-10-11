@@ -107,8 +107,8 @@ Rust 默认调用平台安装的 cc 编译器，所哟我们需要指定 Android
 其实是不用的。在新的 NDK 中已经自自带了。我们在项目跟目录创建 `.cargo/config`：
 ```shell
 [target.aarch64-linux-android]
-linker = '/home/ying/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang'
-ar = '/home/ying/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar'
+linker = '/path/to/android-sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang'
+ar = '/path/to/android-sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar'
 ```
 ### 编译 Rust 代码
 执行：

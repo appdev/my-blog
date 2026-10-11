@@ -38,7 +38,7 @@ docker run --name wiz --restart=always -it -d -v  ~/wizdata:/wiz/storage -v  /et
     ssl_session_timeout 10m;
     error_page 497  https://$host$request_uri;
 ```
-OK 配置完成之后，打开你的域名，或者你的 IP:端口，比如 http://127.0.0.1:6789，默认管理员账号：admin@wiz.cn，密码：123456
+配置完成后，打开自己的域名或 `http://<服务器地址>:<端口>`，使用该服务的账号密码登录。
 ### 配置云存储
 默认笔记是保存在本地的，你可以使用本地 + 云同步的方式，或者像我一样直接使用云储存，
 配置阿里 OSS

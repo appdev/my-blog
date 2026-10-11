@@ -43,7 +43,7 @@ applicationVariants.all { variant ->
         if (outputFile != null && outputFile.name.endsWith('.apk')) {
             def fileName = "${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
             outputFileName = fileName
-            variant.packageApplication.outputDirectory = new File("/Users/joker/Android/AppOutPut/" + defaultConfig.versionName)
+            variant.packageApplication.outputDirectory = new File(System.getProperty("user.home") + "/Android/AppOutPut/" + defaultConfig.versionName)
         }
     }
 }
@@ -57,7 +57,7 @@ applicationVariants.all { variant ->
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
                 def fileName = "${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
                 outputFileName = fileName
-                variant.packageApplication.outputDirectory = new File("/Users/joker/Android/AppOutPut/" + defaultConfig.versionName)
+                variant.packageApplication.outputDirectory = new File(System.getProperty("user.home") + "/Android/AppOutPut/" + defaultConfig.versionName)
             }
         }
 }
