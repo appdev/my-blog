@@ -120,6 +120,6 @@ bind 只是让同一目录在另一处可见，不复制文件；bindfs 则通�
 
 新版分别用 JBOD、单成员 RAID1 和四成员 RAID6 的虚拟阵列走完了整个流程，旧文件、普通账号读写、飞牛自动生成的 SMB 共享和虚拟机正常重启都通过了检查。Linux 上的 122 项自动检查也全部通过。这些都是隔离环境的结果，没有拿已经接管的三组真实阵列再转换一次。
 
-[下载一键接管安装包和源码](https://github.com/appdev/ugacltool/releases/tag/v0.2.0)。安装入口和适用范围见[安装说明](https://github.com/appdev/ugacltool/blob/main/docs/oneclick.md)，完整测试范围见[新版验证记录](https://github.com/appdev/ugacltool/blob/main/docs/oneclick-verification.md)。当前仍限定本文的飞牛版本，不能直接套用到其他版本或故障阵列。
+[GitHub 项目主页](https://github.com/appdev/ugacltool) 提供源码，安装包在仓库的 Releases 页面获取。后续更新也会发布在那里。安装入口和适用范围见[安装说明](https://github.com/appdev/ugacltool/blob/main/docs/oneclick.md)，完整测试范围见[新版验证记录](https://github.com/appdev/ugacltool/blob/main/docs/oneclick-verification.md)。当前仍限定本文的飞牛版本，不能直接套用到其他版本或故障阵列。
 
 对这台 NAS 而言，切换系统后原来的三组阵列和文件已经接着用起来了。日常读写和共享都在飞牛中完成，前期测试目录和临时共享留在探索记录里。
