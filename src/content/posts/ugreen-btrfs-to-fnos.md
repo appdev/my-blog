@@ -116,8 +116,10 @@ bind 只是让同一目录在另一处可见，不复制文件；bindfs 则通�
 
 [开发者附录](https://github.com/appdev/ugacltool/blob/main/docs/blog-ugreen-btrfs-to-fnos-implementation.md) 记录了代码、配置位置、转换接口和恢复边界。[公开源码附件](https://github.com/appdev/ugacltool) 将硬盘序列号、型号、容量和阵列身份改为参数，保留了防止选错硬盘的检查，不包含本机账号密码或私有运行配置。
 
-公开版本的 Linux 合成文件和模拟设备测试共 95 项，全部通过。它与 NAS 当前使用的历史版本分开，没有重新对生产阵列执行转换；新的日志和验证记录要求见附录。附件是实现源码，目前没有一键转换界面。
+后来又把这些步骤整理成了飞牛应用。现在管理员打开“绿联阵列接管”，选择阵列、核对硬盘序列号和容量，就可以点击接管。后台先做隔离验证，再完成原生登记和开机维护，成功后显示存储空间编号。
 
-[下载本次公开源码包](https://github.com/appdev/ugacltool/releases/download/v0.1.0/ugacltool-public-source-20261011-v3.zip)。
+新版分别用 JBOD、单成员 RAID1 和四成员 RAID6 的虚拟阵列走完了整个流程，旧文件、普通账号读写、飞牛自动生成的 SMB 共享和虚拟机正常重启都通过了检查。Linux 上的 122 项自动检查也全部通过。这些都是隔离环境的结果，没有拿已经接管的三组真实阵列再转换一次。
+
+[下载一键接管安装包和源码](https://github.com/appdev/ugacltool/releases/tag/v0.2.0)。安装入口和适用范围见[安装说明](https://github.com/appdev/ugacltool/blob/main/docs/oneclick.md)，完整测试范围见[新版验证记录](https://github.com/appdev/ugacltool/blob/main/docs/oneclick-verification.md)。当前仍限定本文的飞牛版本，不能直接套用到其他版本或故障阵列。
 
 对这台 NAS 而言，切换系统后原来的三组阵列和文件已经接着用起来了。日常读写和共享都在飞牛中完成，前期测试目录和临时共享留在探索记录里。
