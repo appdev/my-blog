@@ -1,17 +1,19 @@
 ---
+import type { Language } from '@/i18n/config'
 import Button from '@/components/Button.astro'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
 import Navbar from '@/components/Navbar.astro'
 import CodeCopyButton from '@/components/Widgets/CodeCopyButton.astro'
 import GithubCard from '@/components/Widgets/GithubCard.astro'
-import GsapAnimation from '@/components/Widgets/GsapAnimation.astro'
-import PhotoSwipe from '@/components/Widgets/PhotoSwipe.astro'
+import ImageZoom from '@/components/Widgets/ImageZoom.astro'
+import MediaEmbed from '@/components/Widgets/MediaEmbed.astro'
 import SoundEffect from '@/components/Widgets/SoundEffect.astro'
-import themeConfig from '@/config'
+import { themeConfig } from '@/config'
 import Head from '@/layouts/Head.astro'
 import { getPageInfo } from '@/utils/page'
-import '@/styles/extend.css'
+import '@/styles/comment.css'
+import '@/styles/extension.css'
 import '@/styles/font.css'
 import '@/styles/global.css'
 import '@/styles/lqip.css'
@@ -22,23 +24,22 @@ interface Props {
   postTitle?: string
   postDescription?: string
   postSlug?: string
-  supportedLangs?: string[]
+  supportedLangs?: Language[]
 }
 
 const { postTitle, postDescription, postSlug, supportedLangs = [] } = Astro.props
 const { isPost } = getPageInfo(Astro.url.pathname)
 const fontStyle = themeConfig.global.fontStyle === 'serif' ? 'font-serif' : 'font-sans'
-const animationEnabled = !themeConfig.global.reduceMotion
-const MarginBottom = isPost && themeConfig.comment?.enabled
-  ? 'mb-10' // Post page with comments
-  : 'mb-12' // Other pages without comments
+const MarginBottom = isPost && themeConfig.comment.enabled
+  ? 'mb-10' // Post page with comment
+  : 'mb-12' // Other pages without comment
 ---
 
 <html
   lang={Astro.currentLocale}
   class:list={[
     fontStyle,
-    { 'scroll-smooth': isPost },
+    isPost ? 'scroll-smooth' : '',
   ]}
 >
   <Head {postTitle} {postDescription} {postSlug} />
@@ -55,11 +56,11 @@ const MarginBottom = isPost && themeConfig.comment?.enabled
       </main>
       <Footer />
     </div>
-    {animationEnabled && <GsapAnimation />}
     <Button supportedLangs={supportedLangs} />
     <SoundEffect />
     <CodeCopyButton />
-    <PhotoSwipe />
     <GithubCard />
+    <MediaEmbed />
+    <ImageZoom />
   </body>
 </html>

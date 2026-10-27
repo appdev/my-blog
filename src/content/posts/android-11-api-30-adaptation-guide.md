@@ -8,7 +8,7 @@ showToc: true
 TocOpen: true
 draft: false
 ---
-转眼之间就该适配 Android 11，记得距离上次写 [Android 10 适配指南](https://www.apkdv.com/android-10-api-29-adaptation-guide.html) 才过去不久.
+转眼之间就该适配 Android 11，记得距离上次写 [Android 10 适配指南](https://apkdv.com/posts/android-10-api-29-adaptation-guide/) 才过去不久.
 ### 行为变更：所有应用
 这些变化，影响所有的应用，不管你的应用的 `targetSdkVersion` 是多少，只要是运行在 Android 11 上都会影响，应该格外的关注：
 #### 数据访问审核
@@ -67,7 +67,7 @@ Android 11 更新主要还是集中在隐私控制这块:
 #### 分区存储强制执行
 >对外部存储目录的访问仅限于应用专属目录，以及应用已创建的特定类型的媒体。 
 `分区存储 `，在 Android10 就已经推行了，简单的说，就是应用对于文件的读写只能在沙盒环境，也就是属于自己应用的目录里面读写。其他媒体文件可以通过`MediaStore` 进行访问。
-具体可以看这里 https://apkdv.com/android-10-api-29-adaptation-guide.html#menu_index_8
+具体可以看这里 https://apkdv.com/posts/android-10-api-29-adaptation-guide/#外部存储
 但是在 android10 的时候，Google 还是为开发者考虑，留了一手。在 targetSdkVersion = 29 应用中，设置 `android:requestLegacyExternalStorage="true"`，就可以不启动分区存储，让以前的文件读取正常使用。但是 targetSdkVersion = 30 中不行了，强制开启分区存储。
 同时增加了 `android:preserveLegacyExternalStorage="true"`，供覆盖升级的应用使用，它可以暂时关闭分区存储，好让开发者完成数据迁移的工作。但是只要卸载再次重装应用就会失效。
 下面是关于旧版本的存储权限的相关运行状况：

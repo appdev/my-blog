@@ -1,147 +1,284 @@
 /**
- * Apply LQIP (Low-Quality Image Placeholders) styles to HTML images from LQIP mapping
+ * Generate and apply LQIP (Low-Quality Image Placeholders) to images
+ * Source: https://frzi.medium.com/lqip-css-73dc6dda2529
  * Usage: pnpm apply-lqip
  */
 
+import type { HTMLElement } from 'node-html-parser'
 import fs from 'node:fs/promises'
-import { exit } from 'node:process'
+import path from 'node:path'
+import process from 'node:process'
 import glob from 'fast-glob'
-import { parse as parseHTML } from 'node-html-parser'
+import { parse } from 'node-html-parser'
+import sharp from 'sharp'
 
 const distDir = 'dist'
+const assetsDir = 'src/assets'
 const lqipMapPath = 'src/assets/lqip-map.json'
 
-interface ProcessingStats {
-  totalImages: number
-  updatedImages: number
-}
 interface LqipMap {
-  [path: string]: number
+  [path: string]: string
 }
 
-// Load LQIP mapping data from JSON file
-async function loadLqipMap(): Promise<LqipMap | null> {
+interface ImageStats {
+  total: number
+  cached: number
+  new: number
+}
+
+interface FileMapping {
+  filePath: string
+  webUrl: string
+}
+
+// Pack RGB color into 11 bits (4 bits R, 4 bits G, 3 bits B)
+function packColor11Bit(r: number, g: number, b: number): number {
+  const pr = Math.round((r / 255) * 15)
+  const pg = Math.round((g / 255) * 15)
+  const pb = Math.round((b / 255) * 7)
+  return (pr << 7) | (pg << 3) | pb
+}
+
+// Pack RGB color into 10 bits (3 bits R, 4 bits G, 3 bits B)
+function packColor10Bit(r: number, g: number, b: number): number {
+  const pr = Math.round((r / 255) * 7)
+  const pg = Math.round((g / 255) * 15)
+  const pb = Math.round((b / 255) * 7)
+  return (pr << 7) | (pg << 3) | pb
+}
+
+async function generateLqipValue(imagePath: string): Promise<string | null> {
   try {
-    const content = await fs.readFile(lqipMapPath, 'utf-8')
-    return JSON.parse(content)
+    const instance = sharp(imagePath)
+
+    // Resize to 3x3 to get key colors (Top-Left, Center, Bottom-Right)
+    const buffer = await instance
+      .resize(3, 3, { fit: 'fill' })
+      .removeAlpha() // Force RGB output
+      .raw()
+      .toBuffer()
+
+    // Extract colors at specific positions
+    // 0: Top-Left, 4: Center, 8: Bottom-Right
+    // Each pixel is 3 bytes (RGB)
+    const getPixel = (index: number) => ({
+      r: buffer[index * 3],
+      g: buffer[index * 3 + 1],
+      b: buffer[index * 3 + 2],
+    })
+
+    const c0 = getPixel(0)
+    const c1 = getPixel(4)
+    const c2 = getPixel(8)
+
+    // Pack colors: [Color0 11b] [Color1 11b] [Color2 10b]
+    const pc0 = packColor11Bit(c0.r, c0.g, c0.b)
+    const pc1 = packColor11Bit(c1.r, c1.g, c1.b)
+    const pc2 = packColor10Bit(c2.r, c2.g, c2.b)
+
+    // Combine into a 32-bit integer
+    const combined = (BigInt(pc0) << 21n) | (BigInt(pc1) << 10n) | BigInt(pc2)
+
+    // Convert to 8-digit hex string
+    return combined.toString(16).padStart(8, '0')
   }
   catch (error) {
-    // If the file does not exist, return null
-    if ((error as { code?: string })?.code === 'ENOENT') {
-      return null
-    }
-
-    console.error('❌ Failed to parse LQIP mapping file:', (error as Error)?.message ?? String(error))
-    exit(1)
+    console.error(`⚠️ Failed to process image: ${imagePath}`, error)
+    return null
   }
 }
 
-// Get all HTML files from dist directory
-async function getHtmlFiles(): Promise<string[]> {
-  console.log('🔍 Scanning HTML files...')
-  const htmlFiles = await glob('**/*.html', { cwd: distDir })
-  console.log(`📦 Found ${htmlFiles.length} HTML files`)
-  return htmlFiles
+/**
+ * LQIP processing functions
+ * Image analysis, mapping generation, and HTML application
+ */
+async function loadExistingLqipMap(): Promise<LqipMap> {
+  try {
+    const data = await fs.readFile(lqipMapPath, 'utf-8')
+    // Older theme versions cached numeric placeholders; regenerate those.
+    return Object.fromEntries(
+      Object.entries(JSON.parse(data)).filter(([, value]) => typeof value === 'string' && /^[\da-f]{8}$/i.test(value)),
+    ) as LqipMap
+  }
+  catch {
+    return {} as LqipMap
+  }
 }
 
-// Process a single image element, applying LQIP style if needed
-function processImage(img: any, lqipMap: LqipMap): boolean {
+async function scanAndAnalyzeImages(): Promise<{ fileMappings: FileMapping[], imageStats: ImageStats, existingMap: LqipMap }> {
+  await fs.mkdir(assetsDir, { recursive: true })
+
+  const webpFiles = await glob('_astro/**/*.webp', {
+    cwd: distDir,
+    absolute: true,
+  })
+
+  const existingMap = await loadExistingLqipMap()
+
+  const fileMappings = webpFiles.map(filePath => ({
+    filePath,
+    webUrl: `/${path.relative(distDir, filePath).replace(/\\/g, '/')}`,
+  }))
+
+  const { cached, new: newCount } = fileMappings.reduce((acc, { webUrl }) => {
+    existingMap[webUrl] !== undefined ? acc.cached++ : acc.new++
+    return acc
+  }, { cached: 0, new: 0 })
+
+  return {
+    fileMappings,
+    imageStats: { total: fileMappings.length, cached, new: newCount },
+    existingMap,
+  }
+}
+
+function cleanLqipMap(existingMap: LqipMap, fileMappings: FileMapping[]): LqipMap {
+  return fileMappings.reduce((acc, { webUrl }) => {
+    if (existingMap[webUrl] !== undefined) {
+      acc[webUrl] = existingMap[webUrl]
+    }
+    return acc
+  }, {} as LqipMap)
+}
+
+async function processNewImages(fileMappings: FileMapping[], stats: ImageStats, cleanedMap: LqipMap): Promise<LqipMap> {
+  const newMap = { ...cleanedMap }
+  let processed = 0
+  const concurrencyLimit = 10
+
+  const processFile = async ({ filePath, webUrl }: FileMapping) => {
+    const lqipValue = await generateLqipValue(filePath)
+    if (lqipValue !== null) {
+      newMap[webUrl] = lqipValue
+    }
+    processed++
+    if (processed % 10 === 0 || processed === stats.new) {
+      console.log(`🔄 Processing: ${processed}/${stats.new}`)
+    }
+  }
+
+  const toProcess = fileMappings.filter(m => cleanedMap[m.webUrl] === undefined)
+
+  for (let i = 0; i < toProcess.length; i += concurrencyLimit) {
+    const batch = toProcess.slice(i, i + concurrencyLimit)
+    await Promise.all(batch.map(processFile))
+  }
+
+  console.log(`✅ Generated LQIP styles for ${stats.new} new images`)
+
+  const isNewFile = Object.keys(cleanedMap).length === 0
+  await fs.writeFile(lqipMapPath, `${JSON.stringify(newMap, null, 2)}\n`)
+  console.log(`📁 LQIP mapping ${isNewFile ? 'saved to' : 'updated in'} ${lqipMapPath}`)
+
+  return newMap
+}
+
+function processImage(img: HTMLElement, lqipMap: LqipMap): boolean {
   const src = img.getAttribute('src')
   if (!src) {
     return false
   }
 
-  // Check if image has a corresponding LQIP value
   const lqipValue = lqipMap[src]
   if (lqipValue === undefined) {
     return false
   }
 
-  // Skip if LQIP style already exists
   const currentStyle = img.getAttribute('style') ?? ''
   if (currentStyle.includes('--lqip:')) {
     return false
   }
 
-  // Create new style with LQIP value
   const newStyle = currentStyle
-    ? `${currentStyle}; --lqip:${lqipValue}`
-    : `--lqip:${lqipValue}`
+    ? `${currentStyle}; --lqip:#${lqipValue}`
+    : `--lqip:#${lqipValue}`
 
-  // Apply the new style to the image
   img.setAttribute('style', newStyle)
   return true
 }
 
-// Process a single HTML file
-async function processHtmlFile(
-  htmlFile: string,
-  lqipMap: LqipMap,
-): Promise<{ totalImages: number, updatedImages: number }> {
-  const filePath = `${distDir}/${htmlFile}`
+async function applyLqipToHtml(lqipMap: LqipMap, outputDir = distDir): Promise<number> {
+  const htmlFiles = await glob('**/*.html', { cwd: outputDir })
+  let totalApplied = 0
 
-  // Parse HTML content
-  const root = parseHTML(await fs.readFile(filePath, 'utf-8'))
-  const images = root.querySelectorAll('img')
+  for (const htmlFile of htmlFiles) {
+    try {
+      const filePath = `${outputDir}/${htmlFile}`
+      const root = parse(await fs.readFile(filePath, 'utf-8'))
+      const images = root.querySelectorAll('img')
 
-  let updatedImages = 0
-  let hasChanges = false
+      if (images.length === 0) {
+        continue
+      }
 
-  // Process each image in the HTML file
-  for (const img of images) {
-    const wasUpdated = processImage(img, lqipMap)
-    if (wasUpdated) {
-      updatedImages++
-      hasChanges = true
+      let hasChanges = false
+      for (const img of images) {
+        const wasUpdated = processImage(img, lqipMap)
+        if (wasUpdated) {
+          totalApplied++
+          hasChanges = true
+        }
+      }
+
+      if (hasChanges) {
+        await fs.writeFile(filePath, root.toString())
+      }
+    }
+    catch (error) {
+      console.warn(`⚠️ Failed to process ${htmlFile}:`, error)
+      continue
     }
   }
 
-  // Write changes to file if any updates were made
-  if (hasChanges) {
-    await fs.writeFile(filePath, root.toString())
-  }
-
-  return {
-    totalImages: images.length,
-    updatedImages,
-  }
+  return totalApplied
 }
 
-// Report processing results
-function reportResults(stats: ProcessingStats): void {
-  if (stats.updatedImages === 0) {
-    console.log(`✅ Done! Found ${stats.totalImages} images, no updates needed`)
-  }
-  else {
-    console.log(`✨ Done! Found ${stats.totalImages} images, updated ${stats.updatedImages} with LQIP styles`)
-  }
-}
+/**
+ * Main workflow
+ * Coordinates LQIP generation and application process
+ */
+async function main() {
+  console.log('🔍 Starting LQIP processing...')
 
-// Main function to apply LQIP styles to all HTML files
-async function applyLqipStyles(): Promise<void> {
-  // Load LQIP mapping data
-  const lqipMap = await loadLqipMap()
-  if (!lqipMap) {
+  const { fileMappings, imageStats, existingMap } = await scanAndAnalyzeImages()
+
+  if (imageStats.total === 0) {
+    console.log('✨ No images found to process')
     return
   }
 
-  // Get all HTML files to process
-  const htmlFiles = await getHtmlFiles()
+  console.log(`📦 Found ${imageStats.total} images (${imageStats.cached} cached, ${imageStats.new} new)`)
 
-  // Process all HTML files
-  const stats: ProcessingStats = { totalImages: 0, updatedImages: 0 }
+  const cleanedMap = cleanLqipMap(existingMap, fileMappings)
 
-  for (const htmlFile of htmlFiles) {
-    const fileStats = await processHtmlFile(htmlFile, lqipMap)
-    stats.totalImages += fileStats.totalImages
-    stats.updatedImages += fileStats.updatedImages
+  let lqipMap: LqipMap
+  if (imageStats.new > 0) {
+    lqipMap = await processNewImages(fileMappings, imageStats, cleanedMap)
+  }
+  else {
+    lqipMap = cleanedMap
+
+    if (Object.keys(existingMap).length > Object.keys(cleanedMap).length) {
+      await fs.writeFile(lqipMapPath, `${JSON.stringify(cleanedMap, null, 2)}\n`)
+    }
   }
 
-  // Report results
-  reportResults(stats)
+  let appliedCount = await applyLqipToHtml(lqipMap)
+  // The Vercel adapter copies dist before this post-build step runs.
+  const vercelDir = '.vercel/output/static'
+  if (await fs.stat(vercelDir).then(stat => stat.isDirectory()).catch(() => false)) {
+    appliedCount += await applyLqipToHtml(lqipMap, vercelDir)
+  }
+
+  if (appliedCount === 0) {
+    console.log('✨ All images already have LQIP styles')
+    return
+  }
+
+  console.log(`✨ Successfully applied LQIP styles to ${appliedCount} images`)
 }
 
-applyLqipStyles().catch((error) => {
-  console.error('❌ Execution failed:', (error as Error)?.message ?? String(error))
-  exit(1)
+main().catch((error) => {
+  console.error('❌ LQIP processing failed:', error)
+  process.exit(1)
 })

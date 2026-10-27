@@ -89,7 +89,7 @@ Android 10 引入了 `ACCESS_BACKGROUND_LOCATION` 权限。若应用在后台运
 在访问用户步数或其他物理活动类别是需要获取运行时权限
 #### 剪切板隐私限制
 从 Android P 开始，除非你的应用是默认输入法，否则它无法访问用户的剪贴板数据；但向剪切板写入数据不影响。
-  [1]: https://apkdv.com/android-11-api-30-adaptation-guide.html
+  [1]: https://apkdv.com/posts/android-11-api-30-adaptation-guide/
   [2]: https://developer.android.com/distribute/best-practices/develop/restrictions-non-sdk-interfaces#test-for-non-sdk
   [3]: https://android.googlesource.com/platform/prebuilts/runtime/+/master/appcompat
   [4]: https://developer.android.com/reference/android/provider/MediaStore.Images

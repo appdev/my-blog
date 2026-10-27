@@ -1,54 +1,64 @@
 import type { APIContext, ImageMetadata } from 'astro'
 import type { CollectionEntry } from 'astro:content'
-import type { Author } from 'feed'
+import type { Language } from '@/i18n/config'
 import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import { Feed } from 'feed'
 import MarkdownIt from 'markdown-it'
-import { parse as htmlParser } from 'node-html-parser'
+import { parse } from 'node-html-parser'
 import sanitizeHtml from 'sanitize-html'
-import { defaultLocale, themeConfig } from '@/config'
+import { base, defaultLocale, themeConfig } from '@/config'
 import { ui } from '@/i18n/ui'
 import { memoize } from '@/utils/cache'
-import { generateDescription } from '@/utils/description'
-
-interface GenerateFeedOptions {
-  lang?: string
-}
+import { getPostDescription } from '@/utils/description'
 
 const markdownParser = new MarkdownIt()
-const { title, description, url, author: siteAuthor } = themeConfig.site
-const followConfig = themeConfig.seo?.follow
+const { title, description, i18nTitle, url, author } = themeConfig.site
+const siteRootURL = new URL(`${base}/`, url).toString()
+const { folo } = themeConfig.seo ?? {}
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Dynamically import all images from /src/content/posts/_images
 const imagesGlob = import.meta.glob<{ default: ImageMetadata }>(
   '/src/content/posts/_images/**/*.{jpeg,jpg,png,gif,webp}',
 )
 
 /**
- * Optimize image URLs
+ * Converts relative image paths to absolute URLs
  *
- * @param srcPath Source relative path of the image
- * @param baseUrl Base URL of the site
- * @returns Optimized full image URL or null
+ * @param srcPath - Relative image path from markdown content
+ * @param baseUrl - Site base URL
+ * @returns Optimized image URL or null if processing fails
  */
-const getOptimizedImageUrl = memoize(async (srcPath: string, baseUrl: string) => {
-  const prefixRemoved = srcPath.replace(/^\.\.\/|^\.\//, '')
-  const rawImagePath = `/src/content/posts/${prefixRemoved}`
-  const rawImageModule = imagesGlob[rawImagePath]
+async function _getAbsoluteImageUrl(srcPath: string, baseUrl: string) {
+  // Remove relative path prefixes (../ and ./) from image source path
+  const prefixRemoved = srcPath.replace(/^(?:\.\.\/)+|^\.\//, '')
+  const absolutePath = `/src/content/posts/${prefixRemoved}`
+  const imageImporter = imagesGlob[absolutePath]
 
-  if (!rawImageModule) {
+  if (!imageImporter) {
     return null
   }
 
-  const rawImageMetadata = await rawImageModule().then(res => res.default).catch(() => null)
-  if (!rawImageMetadata) {
+  // Import image module and extract its metadata
+  const imageMetadata = await imageImporter()
+    .then(importedModule => importedModule.default)
+    .catch((error) => {
+      console.warn(`Failed to import image: ${absolutePath}`, error)
+      return null
+    })
+
+  if (!imageMetadata) {
     return null
   }
 
-  const processedImageData = await getImage({ src: rawImageMetadata })
-  return new URL(processedImageData.src, baseUrl).toString()
-})
+  // Create optimized image from metadata
+  const optimizedImage = await getImage({ src: imageMetadata })
+  return new URL(optimizedImage.src, baseUrl).toString()
+}
+
+// Export memoized version
+const getAbsoluteImageUrl = memoize(_getAbsoluteImageUrl)
 
 /**
  * Fix relative image paths in HTML content
@@ -58,115 +68,96 @@ const getOptimizedImageUrl = memoize(async (srcPath: string, baseUrl: string) =>
  * @returns Processed HTML string with all image paths converted to absolute URLs
  */
 async function fixRelativeImagePaths(htmlContent: string, baseUrl: string): Promise<string> {
-  const htmlDoc = htmlParser(htmlContent)
+  const htmlDoc = parse(htmlContent)
   const images = htmlDoc.getElementsByTagName('img')
   const imagePromises = []
 
   for (const img of images) {
     const src = img.getAttribute('src')
-
     if (!src) {
       continue
     }
 
     imagePromises.push((async () => {
       try {
-        // Skip if not a relative or public image path
-        if (!src.startsWith('./') && !src.startsWith('../') && !src.startsWith('/images')) {
+        // Skip if not a relative path to src/content/posts/_images directory
+        if (!src.startsWith('./') && !src.startsWith('../') && !src.startsWith('_images/')) {
           return
         }
 
         // Process images from src/content/posts/_images directory
-        if (src.startsWith('./') || src.startsWith('../')) {
-          const optimizedImageUrl = await getOptimizedImageUrl(src, baseUrl)
-
-          if (optimizedImageUrl) {
-            img.setAttribute('src', optimizedImageUrl)
-          }
-          return
+        const absoluteImageUrl = await getAbsoluteImageUrl(src, baseUrl)
+        if (absoluteImageUrl) {
+          img.setAttribute('src', absoluteImageUrl)
         }
-
-        // Process images from public/images directory
-        const publicImageUrl = new URL(src, baseUrl).toString()
-        img.setAttribute('src', publicImageUrl)
       }
       catch (error) {
-        console.warn(`Failed to process image in RSS feed: ${src}`, (error as Error)?.message ?? String(error))
+        console.warn(`Failed to convert relative image path to absolute URL: ${src}`, error)
       }
     })())
   }
 
   await Promise.all(imagePromises)
+
   return htmlDoc.toString()
 }
 
 /**
- * Generate post URL with language prefix and abbrlink/slug
- *
- * @param post The post collection entry
- * @param baseUrl Base URL of the site
- * @returns The fully formed URL for the post
- */
-function generatePostUrl(post: CollectionEntry<'posts'>, baseUrl: string): string {
-  const postSlug = post.data.abbrlink || post.id
-  const langPrefix = post.data.lang !== defaultLocale && post.data.lang !== ''
-    ? `${post.data.lang}/`
-    : ''
-
-  return new URL(`${langPrefix}posts/${postSlug}/`, baseUrl).toString()
-}
-
-/**
+ * >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  * Generate a feed object supporting both RSS and Atom formats
  *
  * @param options Feed generation options
  * @param options.lang Optional language code
  * @returns A Feed instance ready for RSS or Atom output
  */
-export async function generateFeed({ lang }: GenerateFeedOptions = {}) {
+export async function generateFeed({ lang }: { lang?: Language } = {}) {
   const currentUI = ui[lang as keyof typeof ui] ?? ui[defaultLocale as keyof typeof ui] ?? {}
-  const useI18nTitle = themeConfig.site.i18nTitle
-  const siteTitle = useI18nTitle ? currentUI.title : title
-  const siteDescription = useI18nTitle ? currentUI.description : description
-  const baseUrl = lang ? `${url}/${lang}` : url
-  const siteURL = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
-  const author: Author = {
-    name: siteAuthor,
-    link: url,
-  }
+  const siteURL = lang ? new URL(`${lang}/`, siteRootURL).toString() : siteRootURL
 
   // Create Feed instance
   const feed = new Feed({
-    title: siteTitle,
-    description: siteDescription,
+    title: i18nTitle ? currentUI.title : title,
+    description: i18nTitle ? currentUI.description : description,
     id: siteURL,
     link: siteURL,
-    language: lang || themeConfig.global.locale,
-    copyright: `Copyright © ${new Date().getFullYear()} ${siteAuthor}`,
+    language: lang ?? themeConfig.global.locale,
+    copyright: `Copyright © ${new Date().getFullYear()} ${author}`,
     updated: new Date(),
     generator: 'Astro-Theme-Retypeset with Feed for Node.js',
+
     feedLinks: {
-      rss: new URL(lang ? `/${lang}/rss.xml` : '/rss.xml', url).toString(),
-      atom: new URL(lang ? `/${lang}/atom.xml` : '/atom.xml', url).toString(),
+      rss: new URL(lang ? `${base}/${lang}/rss.xml` : `${base}/rss.xml`, url).toString(),
+      atom: new URL(lang ? `${base}/${lang}/atom.xml` : `${base}/atom.xml`, url).toString(),
     },
-    author,
+
+    author: {
+      name: author,
+      link: siteRootURL,
+    },
   })
 
   // Filter posts by language and exclude drafts
   const posts = await getCollection(
     'posts',
-    ({ data }: { data: CollectionEntry<'posts'>['data'] }) =>
-      (!data.draft && (data.lang === lang || data.lang === '' || (lang === undefined && data.lang === defaultLocale))),
+    ({ data }: { data: CollectionEntry<'posts'>['data'] }) => {
+      const isNotDraft = !data.draft
+      const isCorrectLang = data.lang === lang
+        || data.lang === ''
+        || (lang === undefined && data.lang === defaultLocale)
+
+      return isNotDraft && isCorrectLang
+    },
   )
 
   // Sort posts by published date in descending order and limit to the latest 25
-  const limitedPosts = [...posts]
+  const recentPosts = [...posts]
     .sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime())
     .slice(0, 25)
 
   // Add posts to feed
-  for (const post of limitedPosts) {
-    const postLink = generatePostUrl(post, siteURL)
+  for (const post of recentPosts) {
+    const slug = post.data.abbrlink || post.id
+    const link = new URL(`posts/${slug}/`, siteURL).toString()
 
     // Optimize content processing
     const postContent = post.body
@@ -174,7 +165,7 @@ export async function generateFeed({ lang }: GenerateFeedOptions = {}) {
           await fixRelativeImagePaths(
             // Remove HTML comments before rendering markdown
             markdownParser.render(post.body.replace(/<!--[\s\S]*?-->/g, '')),
-            url,
+            siteRootURL,
           ),
           {
             // Allow <img> tags in feed content
@@ -190,23 +181,26 @@ export async function generateFeed({ lang }: GenerateFeedOptions = {}) {
 
     feed.addItem({
       title: post.data.title,
-      id: postLink,
-      link: postLink,
-      description: generateDescription(post, 'feed'),
+      id: link,
+      link,
+      description: getPostDescription(post, 'feed'),
       content: postContent,
-      author: [author],
+      author: [{
+        name: author,
+        link: siteRootURL,
+      }],
       published: publishDate,
       date: updateDate,
     })
   }
 
-  // Add follow verification if available
-  if (followConfig?.feedID && followConfig?.userID) {
+  // Add folo verification if available
+  if (folo?.feedID && folo?.userID) {
     feed.addExtension({
-      name: 'follow_challenge',
+      name: 'folo_challenge',
       objects: {
-        feedId: followConfig.feedID,
-        userId: followConfig.userID,
+        feedId: folo.feedID,
+        userId: folo.userID,
       },
     })
   }
@@ -214,21 +208,18 @@ export async function generateFeed({ lang }: GenerateFeedOptions = {}) {
   return feed
 }
 
-/**
- * Generate RSS 2.0 format feed
- *
- * @param context Astro API context containing request params
- * @returns Response object with RSS XML content
- */
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Generate RSS 2.0 format feed
 export async function generateRSS(context: APIContext) {
   const feed = await generateFeed({
-    lang: context.params?.lang as string | undefined,
+    lang: context.params?.lang as Language | undefined,
   })
 
+  // Add XSLT stylesheet to RSS feed
   let rssXml = feed.rss2()
   rssXml = rssXml.replace(
     '<?xml version="1.0" encoding="utf-8"?>',
-    '<?xml version="1.0" encoding="utf-8"?>\n<?xml-stylesheet href="/feeds/rss-style.xsl" type="text/xsl"?>',
+    `<?xml version="1.0" encoding="utf-8"?>\n<?xml-stylesheet href="${base}/feeds/rss-style.xsl" type="text/xsl"?>`,
   )
 
   return new Response(rssXml, {
@@ -238,21 +229,17 @@ export async function generateRSS(context: APIContext) {
   })
 }
 
-/**
- * Generate Atom 1.0 format feed
- *
- * @param context Astro API context containing request params
- * @returns Response object with Atom XML content
- */
+// Generate Atom 1.0 format feed
 export async function generateAtom(context: APIContext) {
   const feed = await generateFeed({
-    lang: context.params?.lang as string | undefined,
+    lang: context.params?.lang as Language | undefined,
   })
 
+  // Add XSLT stylesheet to Atom feed
   let atomXml = feed.atom1()
   atomXml = atomXml.replace(
     '<?xml version="1.0" encoding="utf-8"?>',
-    '<?xml version="1.0" encoding="utf-8"?>\n<?xml-stylesheet href="/feeds/atom-style.xsl" type="text/xsl"?>',
+    `<?xml version="1.0" encoding="utf-8"?>\n<?xml-stylesheet href="${base}/feeds/atom-style.xsl" type="text/xsl"?>`,
   )
 
   return new Response(atomXml, {

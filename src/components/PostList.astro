@@ -1,59 +1,46 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { Language } from '@/i18n/config'
+import type { Post } from '@/types'
 import PinIcon from '@/assets/icons/pin-icon.svg'
 import PostDate from '@/components/PostDate.astro'
-import { defaultLocale } from '@/config'
-import { generateDescription } from '@/utils/description'
+import { getPostPath } from '@/i18n/path'
+import { getPostDescription } from '@/utils/description'
 import { isHomePage } from '@/utils/page'
 
-type Post = CollectionEntry<'posts'> & {
-  remarkPluginFrontmatter: {
-    minutes: number
-  }
+export interface Props {
+  posts: Post[]
+  lang: Language
+  pinned?: boolean
 }
 
 const { posts, lang, pinned = false } = Astro.props
 const isHome = isHomePage(Astro.url.pathname)
-
-export interface Props {
-  posts: Post[]
-  lang: string
-  pinned?: boolean
-}
-
-function getPostPath(post: Post) {
-  // Prioritize abbrlink over slug
-  const postPath = post.data.abbrlink || post.id
-
-  // If default language, return root path
-  if (lang === defaultLocale) {
-    return `/posts/${postPath}/`
-  }
-
-  // Add language prefix for non-default languages
-  return `/${lang}/posts/${postPath}/`
-}
 ---
 
 <ul>
-  {posts.map(post => (
-    <li
-      class="mb-5.5"
-      lg={isHome ? 'mb-10' : ''}
-    >
+  {posts.map((post) => {
+    const slug = post.data.abbrlink || post.id
 
-      {/* post title */}
-      <h3 class="inline transition-colors hover:c-primary">
-        <a
-          class="cjk:tracking-0.02em"
-          lg={isHome ? 'font-medium text-4.5' : ''}
-          href={getPostPath(post)}
-          transition:name={`post-${post.data.abbrlink || post.id}${lang ? `-${lang}` : ''}`}
-          data-disable-theme-transition
-        >
-          {post.data.title}
-        </a>
-
+    return (
+      <li
+        class:list={[
+          'mb-5.5',
+          isHome ? 'lg:mb-10' : '',
+        ]}
+      >
+        {/* post title */}
+        <h3 class="inline transition-colors hover:c-primary">
+          <a
+            class:list={[
+              'cjk:tracking-wide',
+              isHome ? 'lg:font-medium lg:text-4.5' : '',
+            ]}
+            href={getPostPath(slug, lang)}
+            transition:name={`post-${slug}${lang ? `-${lang}` : ''}`}
+            data-disable-theme-toggle-transition
+          >
+            {post.data.title}
+          </a>
           {/* pinned icon */}
           {pinned && (
             <PinIcon
@@ -62,38 +49,38 @@ function getPostPath(post: Post) {
               fill="currentColor"
             />
           )}
-      </h3>
+        </h3>
 
-      {/* mobile post time */}
-      <div
-        class="py-0.8 text-3.5 font-time lg:hidden"
-        transition:name={`time-${post.data.abbrlink || post.id}${lang ? `-${lang}` : ''}`}
-        data-disable-theme-transition
-      >
-        <PostDate
-          date={post.data.published}
-          minutes={post.remarkPluginFrontmatter.minutes}
-        />
-      </div>
-
-      {/* desktop post time */}
-      <div class="hidden text-3.65 font-time lg:(ml-2.5 inline)">
-        <PostDate
-          date={post.data.published}
-          minutes={post.remarkPluginFrontmatter.minutes}
-        />
-      </div>
-
-      {/* desktop post description */}
-      {isHome && (
+        {/* mobile post time */}
         <div
-          class="heti hidden"
-          lg="mt-2.25 block"
+          class="py-0.8 text-3.5 font-time lg:hidden"
+          transition:name={`time-${slug}${lang ? `-${lang}` : ''}`}
+          data-disable-theme-toggle-transition
         >
-          <p>{generateDescription(post, 'list')}</p>
+          <PostDate
+            date={post.data.published}
+            minutes={post.remarkPluginFrontmatter.minutes}
+          />
         </div>
-      )}
 
-    </li>
-  ))}
+        {/* desktop post time */}
+        <div class="hidden text-3.65 font-time lg:(ml-2.5 inline)">
+          <PostDate
+            date={post.data.published}
+            minutes={post.remarkPluginFrontmatter.minutes}
+          />
+        </div>
+
+        {/* desktop post description */}
+        {isHome && (
+          <div
+            class="heti hidden"
+            lg="mt-2.25 block"
+          >
+            <p>{getPostDescription(post, 'list')}</p>
+          </div>
+        )}
+      </li>
+    )
+  })}
 </ul>

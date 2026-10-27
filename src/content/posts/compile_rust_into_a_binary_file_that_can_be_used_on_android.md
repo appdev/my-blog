@@ -12,7 +12,7 @@ Rust 语言已经成为了越来越受欢迎的一种系统级编程语言。它
  ```shell
  cargo new rustDemo
  ```
- 为了跟前文 ([使用 GoMobile 创建 Android、iOS 跨平台 WebSocket Library](https://apkdv.com/creating-android-ios-cross-platform-libraries-with-gomobile.html)) 呼应，我们这里也使用 Rust 借助 tokio 写一个 WebSocket Server。
+ 为了跟前文 ([使用 GoMobile 创建 Android、iOS 跨平台 WebSocket Library](https://apkdv.com/posts/creating-android-ios-cross-platform-libraries-with-gomobile/)) 呼应，我们这里也使用 Rust 借助 tokio 写一个 WebSocket Server。
 main.rs
  ```rust
  use async_trait::async_trait;
@@ -122,7 +122,7 @@ ar = '/path/to/android-sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_6
 > ```
 > 可以把把 libunwind.a 复制一份重命名为 libgcc.a，它的路径为：/ndk/25.2.9519653/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.7/lib/linux/aarch64/
  ### 在 Android 中运行
-可以参考上篇文章 [使用 GoMobile 创建 Android、iOS 跨平台 WebSocket Library](https://apkdv.com/creating-android-ios-cross-platform-libraries-with-gomobile.html) 稍微修改即可：
+可以参考上篇文章 [使用 GoMobile 创建 Android、iOS 跨平台 WebSocket Library](https://apkdv.com/posts/creating-android-ios-cross-platform-libraries-with-gomobile/) 稍微修改即可：
 ```kotlin
 ....
     MainScope().launch(Dispatchers.IO) {

@@ -4,3 +4,13 @@
 .DS_Store
 hugo
 **.DS_Store
+
+# Astro dependencies and generated output
+/node_modules/
+/dist/
+/.astro/
+/.vercel/
+
+# Local environment configuration
+/.env
+/.env.production

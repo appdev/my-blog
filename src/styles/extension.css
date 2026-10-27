@@ -1,7 +1,6 @@
 /* GitHub Card */
 .gc-container {
-  --at-apply: 'my-6 block overflow-x-auto uno-round-border bg-secondary/5 px-5 py-4';
-  --at-apply: 'transition-colors ease-out hover:(bg-secondary/10 c-primary) lg:(px-6 py-5)';
+  --at-apply: 'my-6 block overflow-x-auto uno-round-border bg-secondary/5 px-5 py-4 transition-colors ease-out hover:(bg-secondary/10 c-primary) lg:(px-6 py-5)';
   scrollbar-width: thin;
   scrollbar-color: oklch(var(--un-preset-theme-colors-secondary) / 0.15) transparent;
 }
@@ -56,8 +55,8 @@
   --at-apply: 'mb-4 flex items-center font-semibold';
 }
 .admonition-title::before {
-  content: '';
   --at-apply: 'mr-2 inline-block aspect-square w-4 align-text-bottom';
+  content: '';
 }
 
 /* Note */
@@ -120,23 +119,108 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-/* :where(details) {
-  --at-apply: 'my-4 px-4 py-3 border border-solid border-secondary/25 rounded cursor-pointer';
+/* Fold >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+summary {
+  --at-apply: 'mb-4 w-fit cursor-pointer list-none';
 }
-details :where(summary) {
-  --at-apply: 'cursor-pointer';
+summary::before {
+  --at-apply: 'mr-2 inline-block transition-transform ease-out';
+  content: '';
+  border-left: 10px solid currentColor;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transform: translate(2px, 0.5px);
 }
-details[open] :where(summary) {
-  --at-apply: 'mb-3 pb-3 border-b border-solid border-secondary/25';
-} */
+details[open] summary::before {
+  transform: rotate(90deg) translate(0.5px, -2px);
+}
 
-/* details :where(summary) {
-  list-style: none;
+/* Gallery */
+.gallery-container {
+  --at-apply: 'my-6 flex gap-4 overflow-x-auto scrollbar-hidden';
 }
-details summary::-webkit-details-marker {
+.gallery-container .gallery-item {
+  --at-apply: 'my-0 max-w-80% flex-shrink-0 lg:max-w-70%';
+}
+:is(h1, h2, h3, h4, h5, h6, .gallery-container) + .gallery-container {
+  --at-apply: 'mt-4';
+}
+.gallery-container:has(+ .gallery-container) {
+  --at-apply: 'mb-4';
+}
+
+/* Medium Embed */
+lite-youtube > .lty-playbtn {
+  --at-apply: 'filter-none';
+}
+.bilibili-player {
+  --at-apply: 'aspect-video w-full';
+}
+.spotify-embed {
+  --at-apply: 'w-full rounded-3';
+}
+.twitter-tweet {
+  --at-apply: 'mx-auto';
+}
+.codepen-embed {
+  --at-apply: 'aspect-video min-h-75 w-full';
+}
+
+/* Mermaid */
+pre.mermaid svg {
+  --at-apply: 'mx-auto';
+}
+
+/* KaTeX Overflow Fix */
+.katex-display {
+  --at-apply: 'my-6 overflow-x-auto overflow-y-hidden scrollbar-hidden';
+}
+.katex-display::-webkit-scrollbar {
   display: none;
 }
-details summary::marker {
-  content: '';
-} */
+
+/* TOC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+#toc-mobile-text {
+  --at-apply: 'ml-4 font-semibold 2xl:hidden';
+}
+#toc-links-list {
+  --at-apply: 'mb-2.5 mt-1 list-none pl-0 2xl:(mb-1 space-y-1) space-y-1.1';
+  scroll-target-group: auto;
+}
+a:target-current {
+    --at-apply: '2xl:(c-primary font-medium)';
+}
+.toc-links-h2, .toc-links-h3, .toc-links-h4 {
+  --at-apply: 'text-balance text-sm font-normal no-underline after:bottom-0.15em 2xl:(text-3.2 c-secondary/80 hover:c-primary hover:font-medium)';
+  transition: color 0.15s ease-out, font-weight 0.15s ease-out;
+}
+
+/* Overflow and Scrollbar */
+#toc-toggle:checked ~ #toc-accordion-wrapper #toc-accordion-content {
+  --at-apply: 'overflow-y-auto 2xl:overflow-hidden';
+}
+#toc-accordion-content {
+  --at-apply: 'max-h-59 overflow-hidden pl-4 pr-6 2xl:(max-h-[calc(100vh-27.5rem)] overflow-y-auto scrollbar-hidden)';
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--un-preset-theme-colors-secondary) / 0.15) transparent;
+}
+#toc-accordion-content::-webkit-scrollbar {
+  --at-apply: 'hidden';
+}
+
+/* Mobile Initial State */
+#toc-accordion-wrapper {
+  --at-apply: 'grid rows-[0fr]';
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+#toc-toggle:checked ~ #toc-accordion-wrapper {
+  --at-apply: 'rows-[1fr]';
+}
+
+/* Desktop Initial State */
+#toc-accordion-wrapper {
+  --at-apply: '2xl:rows-[1fr]';
+}
+#toc-toggle:checked ~ #toc-accordion-wrapper {
+  --at-apply: '2xl:rows-[0fr]';
+}

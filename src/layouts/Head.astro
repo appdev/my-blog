@@ -1,8 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 import katexCSS from 'katex/dist/katex.min.css?url'
-import photoSwipeCSS from 'photoswipe/style.css?url'
-import { allLocales, defaultLocale, themeConfig } from '@/config'
+import { allLocales, base, defaultLocale, themeConfig } from '@/config'
 import { ui } from '@/i18n/ui'
 import { getPageInfo } from '@/utils/page'
 
@@ -12,68 +11,66 @@ interface Props {
   postSlug?: string
 }
 
+// Props and Language
 const { postTitle, postDescription, postSlug } = Astro.props
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
-const langCode = currentLang === defaultLocale ? '' : `${currentLang}/`
+const lang = currentLang === defaultLocale ? '' : `${currentLang}/`
 
-const { title, subtitle, description, author, url, favicon, i18nTitle } = themeConfig.site
+// Site Configuration
+const { title, subtitle, description, i18nTitle, author, favicon } = themeConfig.site
 const { mode: defaultMode, light: { background: lightMode }, dark: { background: darkMode } } = themeConfig.color
 const { katex: katexEnabled, reduceMotion } = themeConfig.global
-const { enabled: commentEnabled = false, waline: { serverURL: walineServerURL = '' } = {} } = themeConfig.comment ?? {}
 const { verification = {}, twitterID = '', googleAnalyticsID = '', umamiAnalyticsID = '', apiflashKey = '' } = themeConfig.seo ?? {}
 const { google = '', bing = '', yandex = '', baidu = '' } = verification
 const { customGoogleAnalyticsJS = '', customUmamiAnalyticsJS = '' } = themeConfig.preload ?? {}
 
-const initMetaTheme = defaultMode === 'dark' ? darkMode : lightMode
+// Site Metadata
+const metaTheme = defaultMode === 'dark' ? darkMode : lightMode
 const siteTitle = i18nTitle ? currentUI.title : title
 const siteSubtitle = i18nTitle ? currentUI.subtitle : subtitle
 const siteDescription = i18nTitle ? currentUI.description : description
 
+// Page Metadata
 const pageTitle = postTitle ? `${postTitle} | ${siteTitle}` : `${siteTitle} - ${siteSubtitle}`
 const pageDescription = postDescription || siteDescription
 const pageImage = postSlug
-  ? `${url}/og/${postSlug}.png`
+  ? new URL(`${base}/og/${postSlug}.png`, Astro.url.origin)
   : apiflashKey
-    ? `https://api.apiflash.com/v1/urltoimage?access_key=${apiflashKey}&url=${url}/${langCode}&format=png&width=1500&height=788&ttl=86400&wait_until=network_idle&no_tracking=true`
-    : `https://api.apiflash.com/v1/urltoimage?access_key=02a837b6188f4ba0a7fd9fbeff03a83e&url=https://retypeset.radishzz.cc/${langCode}&format=png&width=1500&height=788&ttl=172800&wait_until=network_idle&no_tracking=true`
+    ? `https://api.apiflash.com/v1/urltoimage?access_key=${apiflashKey}&url=${Astro.url}&format=png&width=1500&height=788&ttl=259200&wait_until=network_idle&no_tracking=true`
+    : `https://api.apiflash.com/v1/urltoimage?access_key=02a837b6188f4ba0a7fd9fbeff03a83e&url=https://retypeset.radishzz.cc/${lang}&format=png&width=1500&height=788&ttl=604800&wait_until=network_idle&no_tracking=true`
 ---
 
 <head>
-<!-- Basic info -->
+<!-- Basic Info -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-{favicon.toLowerCase().endsWith('.svg') && <link rel="icon" type="image/svg+xml" href={favicon} />}
-{favicon.toLowerCase().endsWith('.png') && <link rel="icon" type="image/png" href={favicon} />}
-{favicon.toLowerCase().endsWith('.ico') && <link rel="icon" type="image/x-icon" href={favicon} />}
+{favicon.toLowerCase().endsWith('.svg') && <link rel="icon" type="image/svg+xml" href={`${base}${favicon}`} />}
+{favicon.toLowerCase().endsWith('.png') && <link rel="icon" type="image/png" href={`${base}${favicon}`} />}
+{favicon.toLowerCase().endsWith('.ico') && <link rel="icon" type="image/x-icon" href={`${base}${favicon}`} />}
 <title>{pageTitle}</title>
 <meta name="description" content={pageDescription} />
 <meta name="author" content={author} />
 <meta name="generator" content={Astro.generator} />
-<meta name="theme-color" content={initMetaTheme} />
+<meta name="theme-color" content={metaTheme} />
 
 <!-- Preload -->
-<link rel="preload" href="/fonts/EarlySummer-VF-Split/EarlySummer-VF-Subset.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Snell-Black-SF.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Snell-Bold-SF.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/STIX-VF.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/STIX-Italic-VF.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href={photoSwipeCSS} as="style" />
-{katexEnabled && <link rel="preload" href={katexCSS} as="style" />}
-{commentEnabled && walineServerURL && <link rel="preload" href="/vendors/waline/waline.css" as="style" />}
-<link rel="stylesheet" href={photoSwipeCSS} media="print" onload={`this.media='all'`} />
+<link rel="preload" href={`${base}/fonts/EarlySummer-VF-Split/EarlySummer-VF-Subset.woff2`} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={`${base}/fonts/Snell-Black-SF.woff2`} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={`${base}/fonts/Snell-Bold-SF.woff2`} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={`${base}/fonts/STIX-VF.woff2`} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={`${base}/fonts/STIX-Italic-VF.woff2`} as="font" type="font/woff2" crossorigin />
 {katexEnabled && <link rel="stylesheet" href={katexCSS} media="print" onload={`this.media='all'`} />}
-{commentEnabled && walineServerURL && <link rel="stylesheet" href="/vendors/waline/waline.css" media="print" onload={`this.media='all'`} />}
-<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="RSS Feed" />
-<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="Atom Feed" />
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="canonical" href={Astro.url} />
 
-<!-- i18n hreflang generate -->
+<!-- Site Links -->
+<link rel="canonical" href={Astro.url} />
+<link rel="sitemap" href={`${base}/sitemap-index.xml`} />
+<link rel="alternate" href={`${base}/rss.xml`} type="application/rss+xml" title="RSS Feed" />
+<link rel="alternate" href={`${base}/atom.xml`} type="application/atom+xml" title="Atom Feed" />
 {allLocales.map(lang => (
   <link
     rel="alternate"
-    href={`${url}${lang === defaultLocale ? '' : `/${lang}/`}`}
+    href={`${Astro.url.origin}${base}${lang === defaultLocale ? '' : `/${lang}/`}`}
     hreflang={lang === 'zh-tw' ? 'zh-TW' : lang}
   />
 ))}
@@ -106,59 +103,55 @@ const pageImage = postSlug
     reduceMotion,
  }}
 >
-// Check if current theme is dark mode
-// Priority: Local storage theme > Default theme > System preference
-function isCurrentDark() {
-  const currentTheme = localStorage.getItem('theme')
-  if (currentTheme) {
-    return currentTheme === 'dark'
+(function () {
+  // Check if current theme is dark
+  // Priority: localStorage theme > default theme > system preference
+  function isCurrentDark() {
+    const currentTheme = localStorage.getItem('theme')
+    if (currentTheme) {
+      return currentTheme === 'dark'
+    }
+
+    if (defaultMode !== 'auto') {
+      return defaultMode === 'dark'
+    }
+
+    // If defaultMode is auto, follow system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
   }
-  if (defaultMode === 'light') {
-    return false
+
+  // Initialize theme
+  function initTheme(doc = document) {
+    const isDark = isCurrentDark()
+    doc.documentElement.classList.toggle('dark', isDark)
+
+    // Update meta theme-color tag
+    const metaThemeColor = doc.head.querySelector('meta[name="theme-color"]')
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', isDark ? darkMode : lightMode)
+    }
   }
-  if (defaultMode === 'dark') {
-    return true
+
+  // Check and init motion preference
+  // Condition: theme config || system preference || browser capability
+  function initMotionPref(doc = document) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const supportsViewTransitions = 'startViewTransition' in doc
+    const shouldReduceMotion = reduceMotion || prefersReducedMotion || !supportsViewTransitions
+
+    doc.documentElement.classList.toggle('reduce-motion', shouldReduceMotion)
   }
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-}
-
-// Initialize theme
-function initTheme(doc = document) {
-  const isDark = isCurrentDark()
-  doc.documentElement.classList.toggle('dark', isDark)
-  const metaTheme = doc.head.querySelector('meta[name="theme-color"]')
-  metaTheme?.setAttribute('content', isDark ? darkMode : lightMode)
-}
-
-// Check and init motion preference
-function initMotionPref(doc = document) {
-  // Priority: Site config > System motion preference > View Transition support
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  const supportsViewTransitions = 'startViewTransition' in doc
-  const shouldReduceMotion = reduceMotion || prefersReducedMotion || !supportsViewTransitions
-  doc.documentElement.classList.toggle('reduce-motion', shouldReduceMotion)
-  doc.documentElement.classList.add('js')
-}
-
-// 1. Initialize theme on first load
-initTheme()
-initMotionPref()
-
-// 2. Update theme before page transition to prevent flashing
-document.addEventListener('astro:before-swap', ({ newDocument }) => {
-  initTheme(newDocument)
-  initMotionPref(newDocument)
-})
-
-// 3. Listen to system theme changes in real-time
-window
-  .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', ({ matches: isDark }) => {
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
-    initTheme()
-    document.dispatchEvent(new Event('theme-changed'))
+  // Update theme before page transition to prevent flashing
+  document.addEventListener('astro:before-swap', ({ newDocument }) => {
+    initTheme(newDocument)
+    initMotionPref(newDocument)
   })
+
+  // Initialize theme on first load
+  initTheme()
+  initMotionPref()
+})()
 </script>
 
 <!-- Google Analytics -->
@@ -174,7 +167,10 @@ window
     <script
       is:inline
       type="text/partytown"
-      define:vars={{ googleAnalyticsID, customGoogleAnalyticsJS }}
+      define:vars={{
+        googleAnalyticsID,
+        customGoogleAnalyticsJS,
+      }}
     >
       window.dataLayer = window.dataLayer || []
       window.gtag = function () {
@@ -200,10 +196,8 @@ window
   <script
     is:inline
     type="text/partytown"
-    crossorigin="anonymous"
-    data-website-id={umamiAnalyticsID}
     src={customUmamiAnalyticsJS || 'https://cloud.umami.is/script.js'}
-    data-cache="true"
+    data-website-id={umamiAnalyticsID}
   />
 )}
 </head>

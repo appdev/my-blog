@@ -11,7 +11,7 @@ draft: false
 ---
 ### 前言
 提到 JNI，大家都会想到 C,C++.不过如今 Rust 又给我们增加了一个选项，借助 rust 的 jni 库 (https://github.com/jni-rs/jni-rs),我们可以很方便的使 Android 与 rust 交互。从本章起，我们将逐步地了解使用 rust 实现一些经典的 jni 方法.
-关于 Rust 环境搭建、配置 Rust Android targets、linker，以及如何在 Android 上如何直接运行 Rust 代码，可以看上篇文章 [将 Rust 编译为可在 Android 上使用的二进制文件](https://apkdv.com/compile_rust_into_a_binary_file_that_can_be_used_on_android.html)
+关于 Rust 环境搭建、配置 Rust Android targets、linker，以及如何在 Android 上如何直接运行 Rust 代码，可以看上篇文章 [将 Rust 编译为可在 Android 上使用的二进制文件](https://apkdv.com/posts/compile_rust_into_a_binary_file_that_can_be_used_on_android/)
 本文主要介绍如何使用 Rust 借助  `J4RS` **方便快捷**的编写 Android Jni:
 阅读本文，你需要具备、了解一下知识：
 - Android 编写 JNI 的基本流程
